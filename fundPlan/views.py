@@ -55,9 +55,6 @@ def getFundData(request):
 
     return JsonResponse({"code": 200, "data": "完成"})
 
-
-
-
 def addFundList(request):
     fundCode = request.GET.get("fundCode")
     text = requests.get("http://fundgz.1234567.com.cn/js/" + fundCode + ".js?rt=1463558676006").text[8:-2]
