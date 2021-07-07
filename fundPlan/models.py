@@ -9,12 +9,6 @@ class fundData(models.Model):
     jzrq = models.CharField(max_length=18, null=False)
     #实际净值
     sjjz = models.FloatField(max_length=20, null=False)
-    # 最新净值
-    zxjz = models.FloatField(max_length=20, null=False)
-    # 最新涨幅
-    zxzf = models.FloatField(max_length=20, null=False)
-    # 最新净值时间
-    gztime = models.CharField(max_length=30, null=False)
 
 
 
