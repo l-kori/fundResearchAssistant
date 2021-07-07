@@ -7,7 +7,7 @@ import time
 import requests
 import re
 
-#定时任务，每5分钟抓取一次数据库里的所有数据并写入数据库
+#定时任务，每5分钟抓取一次数据
 def getFundData(request):
     id = request.GET.get("account")
     try:
@@ -16,9 +16,9 @@ def getFundData(request):
         return JsonResponse({"code": -3, "data": "失败"})
     for i in range(0,len(list)):
         fundcode = list[i].fundcode
+        print(fundcode)
         # 查询数据库是否有这只基金数据
         today = time.strftime("%Y-%m-%d", time.localtime())
-        print(today)
         count = fundData.objects.filter(fundcode=fundcode,gztime=str(today)).count()
         if count > 0:
             continue
@@ -39,29 +39,13 @@ def getFundData(request):
         fund_gszzl = float(json_text['gszzl'])
         # 最新净值时间
         fund_gztime = json_text['gztime']
-        try:
-            funddata = fundData()
-            funddata.fundcode = fund_code
-            funddata.name = fund_name
-            funddata.sjjz = fund_sjjz
-            funddata.jzrq = fund_jzrq
-            funddata.zxjz = fund_gsz
-            funddata.zxzf = fund_gszzl
-            funddata.gztime = today
-            funddata.save()
-            # cur_date = datetime.timedelta.now().date()
-            # import datetime
-            # # 一天前的日期
-            # yester_day = str(cur_date - datetime.timedelta(days=1))
-
-        except:
-            return JsonResponse({"code": -1, "data": "失败"})
 
     return JsonResponse({"code": 200, "data": "完成"})
 
 def addFundList(request):
-    fundCode = request.GET.get("fundCode")
-    text = requests.get("http://fundgz.1234567.com.cn/js/" + fundCode + ".js?rt=1463558676006").text[8:-2]
+    fundcode = request.GET.get("fundcode")
+    account = request.GET.get("account")
+    text = requests.get("http://fundgz.1234567.com.cn/js/" + str(fundcode) + ".js?rt=1463558676006").text[8:-2]
     try:
         json_text = json.loads(text)
     except:
@@ -70,6 +54,7 @@ def addFundList(request):
     try:
         funddata = fundList()
         funddata.fundcode = fund_code
+        funddata.account = account
         funddata.save()
     except:
         return JsonResponse({"code": -1, "data": "失败"})
@@ -92,3 +77,15 @@ def historicalData(request):
     fundCode = request.GET.get("fundCode")
     text = getHistoricalData(fundCode)
     return JsonResponse(text)
+
+
+def synchronousData(request):
+    id = request.GET.get("account")
+    try:
+        list = fundList.objects.filter(account=id)
+    except:
+        return JsonResponse({"code": -3, "data": "失败"})
+    for i in range(0, len(list)):
+        fundcode = list[i].fundcode
+        text = getHistoricalData(fundcode)
+        return JsonResponse(text)
