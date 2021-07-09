@@ -9,6 +9,8 @@ class fundData(models.Model):
     jzrq = models.CharField(max_length=18, null=False)
     #实际净值
     sjjz = models.FloatField(max_length=20, null=False)
+    #平均涨幅
+    pjzf = models.FloatField(max_length=20, null=False,default=0)
 
 
 

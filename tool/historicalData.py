@@ -25,28 +25,31 @@ def getHistoricalData(code):
     }
     response = requests.request("GET", url, headers=headers, data=payload)
     json_text = response.text
-    txt = re.findall("<td>.*?</td>", json_text)[9:289]
+    txt = re.findall("<td>.*?</td>|<td class=\"green\">.*?</td>|<td class=\"red\">.*?</td>", json_text)[9:371]
+    print(txt)
     for i in range(0, len(txt)):
-        if i % 7 == 0:
+        if i % 9 == 0:
             code = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
-            print(code)
             date = str(txt[i]).replace("<td>", "").replace("</td>", "")
-            print(date)
             list1 = fundData.objects.all().filter(fundcode=code, jzrq=date)
+            # 计算20个交易日的平均涨幅
+            # ljzf = fundData.objects.aggregate(Avg("jsjz"))
+            # 写入前查询数据是否存在
             if len(list1) == 0:
-                # 写入前查询数据是否存在
                 try:
                     funddata = fundData()
                     funddata.jzrq = str(txt[i]).replace("<td>", "").replace("</td>", "")
                     funddata.fundcode = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
                     funddata.name = str(txt[i+2]).replace("<td>", "").replace("</td>", "")
                     funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
+                    funddata.pjzf = re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0]
                     funddata.save()
+                    i += 9
                 except:
                     re_text = {"code": -1, "data": "失败"}
                     err = "失败"
                     return re_text,err
-                i += 7
+
             else:
                 re_text = {"code": 0, "data": "成功"}
                 err = ""
