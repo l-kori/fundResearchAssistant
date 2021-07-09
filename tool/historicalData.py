@@ -42,7 +42,7 @@ def getHistoricalData(code):
                     funddata.fundcode = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
                     funddata.name = str(txt[i+2]).replace("<td>", "").replace("</td>", "")
                     funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
-                    funddata.pjzf = re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0]
+                    funddata.jrzf = re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0]
                     funddata.save()
                     i += 9
                 except:
@@ -51,9 +51,7 @@ def getHistoricalData(code):
                     return re_text,err
 
             else:
-                re_text = {"code": 0, "data": "成功"}
-                err = ""
-                return re_text,err
-    re_text = {"code": 0, "data": "成功"}
-    err = ""
-    return re_text,err
+                re_text = "成功"
+                return re_text
+    re_text = "成功"
+    return re_text

@@ -8,10 +8,12 @@ import time
 import json
 import requests
 
+# 添加自选股数据
 def addFundList(request):
     fundcode = request.GET.get("fundcode")
     account = request.GET.get("account")
     text = requests.get("http://fundgz.1234567.com.cn/js/" + str(fundcode) + ".js?rt=1463558676006").text[8:-2]
+    print(text)
     try:
         json_text = json.loads(text)
     except:
@@ -24,19 +26,12 @@ def addFundList(request):
         funddata.save()
     except:
         return JsonResponse({"code": -1, "data": "失败"})
+
+    try:
+        text = getHistoricalData(fundcode)
+    except:
+        return JsonResponse(text)
     return JsonResponse({"code": 0, "data": "成功"})
-
-
-def fundlist(request):
-    id = request.GET.get("account")
-    list1 = fundList.objects.all().filter(account=id)
-    data = []
-    for i in range(0,len(list1)):
-        fundcode = list1[i].fundcode
-        today = time.strftime("%Y-%m-%d", time.localtime())
-        res = list(fundData.objects.filter(fundcode=fundcode, gztime=str(today)).values())
-        data.append(res)
-    return JsonResponse({"code": 0, "data": data})
 
 
 def historicalData(request):
@@ -54,8 +49,5 @@ def synchronousData(request):
 
     for i in range(0,len(list_text)):
         fundcode = str(list_text[i].values())[14:-3]
-        text,err = getHistoricalData(fundcode)
-        if err != "":
-            print(err)
-            return JsonResponse({"code": -6, "data": "失败"})
-    return JsonResponse(text)
+        text = getHistoricalData(fundcode)
+    return JsonResponse({"code": 0, "data": text})
