@@ -3,10 +3,10 @@ import time
 import re
 from fundPlan.models import fundData
 
+
 def getHistoricalData(code):
     today = time.strftime("%Y-%m-%d", time.localtime())
     url = "https://www.dayfund.cn/fundvalue/"+code+".html?sdate=2021-04-07&edate="+str(today)+""
-
     payload = {}
     headers = {
         'authority': 'www.dayfund.cn',
@@ -44,10 +44,13 @@ def getHistoricalData(code):
                     funddata.save()
                 except:
                     re_text = {"code": -1, "data": "失败"}
-                    return re_text
+                    err = "失败"
+                    return re_text,err
                 i += 7
             else:
                 re_text = {"code": 0, "data": "成功"}
-                return re_text
+                err = ""
+                return re_text,err
     re_text = {"code": 0, "data": "成功"}
-    return re_text
+    err = ""
+    return re_text,err

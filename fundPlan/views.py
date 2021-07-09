@@ -1,9 +1,11 @@
 import requests
 import json
+import re
 from django.http import JsonResponse
 from fundPlan.models import fundData,fundList
 from tool.historicalData import getHistoricalData
 import time
+import json
 import requests
 
 def addFundList(request):
@@ -43,12 +45,17 @@ def historicalData(request):
     return JsonResponse(text)
 
 
+# 同步所有基金历史数据
 def synchronousData(request):
-    id = request.GET.get("account")
-    list = fundList.objects.filter(account=id)
-    if len(list) == 0:
+    list_text = list(fundData.objects.values("fundcode").distinct())
+    if len(list_text) == 0:
         return JsonResponse({"code": -5, "data": "失败"})
-    for i in range(0, len(list)):
-        fundcode = list[i].fundcode
-        text = getHistoricalData(fundcode)
-        return JsonResponse(text)
+    text= {}
+
+    for i in range(0,len(list_text)):
+        fundcode = str(list_text[i].values())[14:-3]
+        text,err = getHistoricalData(fundcode)
+        if err != "":
+            print(err)
+            return JsonResponse({"code": -6, "data": "失败"})
+    return JsonResponse(text)
