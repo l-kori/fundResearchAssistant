@@ -1,8 +1,12 @@
+import traceback
+
 import requests
 import time
 import re
 from fundPlan.models import fundData
-
+import logging
+LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
+logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
 
 def getHistoricalData(code):
     today = time.strftime("%Y-%m-%d", time.localtime())
@@ -44,14 +48,21 @@ def getHistoricalData(code):
                     funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
                     funddata.jrzf = re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0]
                     funddata.save()
+                    logging.info(code + "----" + date+"同步成功")
                     i += 9
-                except:
+                except Exception as e:
+                    logging.info("同步失败，数据库写入失败")
+                    logging.error(e)
+                    logging.error(traceback.format_exc())
                     re_text = {"code": -1, "data": "失败"}
                     err = "失败"
                     return re_text,err
 
             else:
+                logging.info(code + "----" + date+"数据存在，无需同步")
                 re_text = "成功"
                 return re_text
     re_text = "成功"
     return re_text
+
+
