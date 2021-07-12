@@ -1,6 +1,7 @@
 import logging
 import traceback
 
+from django.db.models import Avg
 from django.http import JsonResponse
 from fundPlan.models import fundList, fundData
 from tool.historicalData import getHistoricalData

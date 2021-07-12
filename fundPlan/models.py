@@ -15,7 +15,6 @@ class fundData(models.Model):
     pjzf = models.FloatField(max_length=20, null=False,default=0)
 
 
-
 class fundList(models.Model):
     account = models.CharField(max_length=10, null=False,default="admin")
     fundcode = models.CharField(max_length=10, null=False)

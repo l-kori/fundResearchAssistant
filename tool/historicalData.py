@@ -3,7 +3,10 @@ import traceback
 import requests
 import time
 import re
-from fundPlan.models import fundData
+
+from django.db.models import Avg
+
+from fundPlan.models import fundData,fundList
 import logging
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
@@ -36,16 +39,22 @@ def getHistoricalData(code):
             code = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
             date = str(txt[i]).replace("<td>", "").replace("</td>", "")
             list1 = fundData.objects.all().filter(fundcode=code, jzrq=date)
-            # 计算20个交易日的平均涨幅
-            # ljzf = fundData.objects.aggregate(Avg("jsjz"))
+
+
+            # print(pjzf)
             # 写入前查询数据是否存在
             if len(list1) == 0:
                 try:
                     funddata = fundData()
                     funddata.jzrq = str(txt[i]).replace("<td>", "").replace("</td>", "")
-                    funddata.fundcode = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
+                    code = str(txt[i + 1]).replace("<td>", "").replace("</td>", "")
+                    funddata.fundcode = code
                     funddata.name = str(txt[i+2]).replace("<td>", "").replace("</td>", "")
                     funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
+                    if fundData.objects.filter(fundcode=code).aggregate(Avg("jrzf"))['jrzf__avg'] != None:
+                        funddata.pjzf = fundData.objects.filter(fundcode=code).aggregate(Avg("jrzf"))['jrzf__avg']
+                    else:
+                        funddata.pjzf = 0
                     funddata.jrzf = re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0]
                     funddata.save()
                     logging.info(code + "----" + date+"同步成功")
