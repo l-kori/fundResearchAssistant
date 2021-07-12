@@ -13,6 +13,10 @@ logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
 def addFundList(request):
     fundcode = request.GET.get("fundcode")
     account = request.GET.get("account")
+    isexit = fundList.objects.filter(account=account,fundcode=fundcode)
+    if len(isexit) != 0:
+        logging.info("数据已存在，无需再添加")
+        return JsonResponse({"code": -2, "data": "数据已存在，无需再添加"})
     text = requests.get("http://fundgz.1234567.com.cn/js/" + str(fundcode) + ".js?rt=1463558676006").text[8:-2]
     try:
         json_text = json.loads(text)
@@ -97,4 +101,3 @@ def userLiveData(request):
             logging.error(traceback.format_exc())
             return JsonResponse({"code": -2, "data": "失败"})
     return JsonResponse({"code": 0, "data": fund_list})
-
