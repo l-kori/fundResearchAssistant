@@ -47,3 +47,948 @@
 2021-07-09 14:12:27,170 - DEBUG - Using selector: KqueueSelector
 2021-07-09 14:12:53,455 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
 2021-07-09 14:12:53,456 - DEBUG - Using selector: KqueueSelector
+2021-07-09 17:59:58,578 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:36:01,282 - DEBUG - Starting new HTTPS connection (1): www.dayfund.cn:443
+2021-07-12 10:36:02,151 - DEBUG - https://www.dayfund.cn:443 "GET /fundvalue/004241.html?sdate=2021-04-07&edate=2021-07-12 HTTP/1.1" 200 None
+2021-07-12 10:36:02,174 - INFO - 004241----2021-07-09数据存在，无需同步
+2021-07-12 10:36:02,174 - INFO - 004241数据同步完成
+2021-07-12 10:36:02,177 - DEBUG - Starting new HTTPS connection (1): www.dayfund.cn:443
+2021-07-12 10:36:02,696 - DEBUG - https://www.dayfund.cn:443 "GET /fundvalue/008903.html?sdate=2021-04-07&edate=2021-07-12 HTTP/1.1" 200 None
+2021-07-12 10:36:02,720 - INFO - 008903----2021-07-09数据存在，无需同步
+2021-07-12 10:36:02,721 - INFO - 008903数据同步完成
+2021-07-12 10:36:02,727 - DEBUG - Starting new HTTPS connection (1): www.dayfund.cn:443
+2021-07-12 10:36:03,277 - DEBUG - https://www.dayfund.cn:443 "GET /fundvalue/320007.html?sdate=2021-04-07&edate=2021-07-12 HTTP/1.1" 200 None
+2021-07-12 10:36:03,294 - INFO - 320007----2021-07-09数据存在，无需同步
+2021-07-12 10:36:03,295 - INFO - 320007数据同步完成
+2021-07-12 10:44:56,379 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fund/urls.py changed, reloading.
+2021-07-12 10:44:56,381 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:45:23,679 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fund/urls.py changed, reloading.
+2021-07-12 10:45:23,681 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:45:27,708 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:45:27,709 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:45:41,479 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:45:41,480 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:45:48,732 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:45:48,733 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:49:56,978 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fund/urls.py changed, reloading.
+2021-07-12 10:49:56,979 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:50:01,026 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:50:01,027 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:50:09,373 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:50:09,374 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:50:16,857 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:50:16,858 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:50:27,508 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:50:27,510 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:52:05,261 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:52:05,263 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:52:27,070 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:52:27,071 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:53:21,126 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:53:21,127 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:53:30,662 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:53:30,664 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:53:55,650 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:53:55,651 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:54:07,232 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:54:07,234 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:54:17,848 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:54:17,850 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:54:34,016 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 68, in userLiveData
+    list_text = list(fundData.objects.filter(account=account))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1378, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1251, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1088, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'account' into field. Choices are: fundcode, id, jrzf, jzrq, name, pjzf, sjjz
+2021-07-12 10:54:43,268 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:54:43,269 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:54:47,270 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 68, in userLiveData
+    list_text = list(fundData.objects.filter(account=account))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1378, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1251, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1088, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'account' into field. Choices are: fundcode, id, jrzf, jzrq, name, pjzf, sjjz
+2021-07-12 10:54:50,044 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 68, in userLiveData
+    list_text = list(fundData.objects.filter(account=account))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1378, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1251, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1088, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'account' into field. Choices are: fundcode, id, jrzf, jzrq, name, pjzf, sjjz
+2021-07-12 10:54:58,957 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 68, in userLiveData
+    list_text = list(fundData.objects.filter(account=account))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1378, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1251, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1088, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1483, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'account' into field. Choices are: fundcode, id, jrzf, jzrq, name, pjzf, sjjz
+2021-07-12 10:55:10,009 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:55:10,010 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:56:03,385 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:56:03,386 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:56:53,752 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:56:53,754 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:57:14,267 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:57:14,269 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:57:18,274 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:57:18,275 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:57:22,116 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:57:22,117 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:57:37,690 - INFO - admin1用户自选股数据为空
+2021-07-12 10:58:18,451 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:58:18,452 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:58:22,413 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:58:22,414 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:58:29,969 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:58:29,970 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:58:49,811 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:58:49,812 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:59:21,855 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:59:21,856 - DEBUG - Using selector: KqueueSelector
+2021-07-12 10:59:27,238 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 74, in userLiveData
+    print(type(i.values()))
+AttributeError: 'fundList' object has no attribute 'values'
+2021-07-12 10:59:37,067 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 10:59:37,069 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:00:00,334 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 73, in userLiveData
+    for i in len(list_text):
+TypeError: 'int' object is not iterable
+2021-07-12 11:00:16,742 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:00:16,743 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:00:42,227 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:00:42,228 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:00:45,406 - ERROR - Internal Server Error: /userlivedata/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py", line 74, in userLiveData
+    print(str(list_text[i].values()))
+AttributeError: 'fundList' object has no attribute 'values'
+2021-07-12 11:01:16,462 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:01:16,463 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:05:22,913 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:05:22,915 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:05:43,969 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:05:43,970 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:06:24,995 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:06:24,996 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:06:31,232 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:06:31,233 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:06:39,681 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:06:39,683 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:06:45,799 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:06:45,802 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:06:49,733 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:06:49,735 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:07:02,777 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:07:02,778 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:07:31,342 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:07:31,343 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:07:47,537 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:07:47,538 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:07:50,290 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:07:50,291 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:07:56,395 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:07:56,396 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:08:20,268 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:08:20,269 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:08:51,160 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:08:51,161 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:08:57,299 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:08:57,300 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:09:03,537 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:09:03,538 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:09:06,404 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:09:06,405 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:09:37,081 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:09:37,082 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:10:26,685 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:10:26,688 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:10:38,450 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:10:38,451 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:10:46,593 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:10:46,644 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:10:46,652 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:10:46,653 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:10:46,653 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:10:46,653 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:10:46,653 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:10:46,653 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:10:46,654 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:10:46,654 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:10:46,654 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:10:46,654 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:10:46,654 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:10:46,654 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:10:46,654 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:10:46,654 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:10:46,655 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:10:46,655 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,655 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,656 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:10:46,656 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:10:46,656 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:10:46,656 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:10:46,656 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:10:46,656 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:10:46,656 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:10:46,656 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:10:46,660 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:10:46,699 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/008903.js?rt=1463558676006 HTTP/1.1" 200 266
+2021-07-12 11:10:46,704 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:10:46,704 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:10:46,704 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:10:46,704 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:10:46,704 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:10:46,704 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:10:46,704 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:10:46,705 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:10:46,705 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:10:46,705 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:10:46,705 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:10:46,705 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:10:46,705 - DEBUG - IBM866 Russian confidence = 0.0
+2021-07-12 11:10:46,705 - DEBUG - IBM855 Russian confidence = 0.2346574155327167
+2021-07-12 11:10:46,705 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:10:46,705 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - ISO-8859-9 Turkish confidence = 0.18594397594490347
+2021-07-12 11:10:46,706 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,706 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:10:46,707 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:10:46,707 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:10:46,707 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:10:46,707 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:10:46,707 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:10:46,707 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:10:46,707 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:10:46,710 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:10:46,745 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/320007.js?rt=1463558676006 HTTP/1.1" 200 154
+2021-07-12 11:10:46,748 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:10:46,748 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:10:46,748 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:10:46,749 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:10:46,749 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:10:46,749 - DEBUG - IBM866 Russian confidence = 0.07964130466564931
+2021-07-12 11:10:46,749 - DEBUG - IBM855 Russian confidence = 0.30339544634533067
+2021-07-12 11:10:46,750 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:10:46,750 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:10:46,750 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:10:46,750 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:10:46,750 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:10:46,750 - DEBUG - ISO-8859-9 Turkish confidence = 0.2000894971736644
+2021-07-12 11:10:46,750 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:10:46,750 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:10:46,750 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:10:46,750 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:10:46,750 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:10:46,750 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:10:46,751 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:10:46,751 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:10:46,751 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:10:46,751 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:10:46,751 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:13,756 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:11:13,757 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:11:17,555 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:11:17,556 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:11:24,672 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:11:24,711 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 262
+2021-07-12 11:11:24,717 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:11:24,717 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:11:24,718 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:11:24,718 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:11:24,718 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:11:24,719 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:11:24,719 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:11:24,719 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,719 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,720 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:11:24,720 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:11:24,720 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:11:24,720 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:11:24,720 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:11:24,720 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:11:24,720 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:11:24,720 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:24,724 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:11:24,756 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/008903.js?rt=1463558676006 HTTP/1.1" 200 159
+2021-07-12 11:11:24,761 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:11:24,761 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:11:24,761 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:11:24,762 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:11:24,762 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:11:24,762 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:11:24,762 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:11:24,762 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:24,762 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:11:24,763 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:11:24,763 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:11:24,763 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:11:24,763 - DEBUG - IBM866 Russian confidence = 0.0
+2021-07-12 11:11:24,764 - DEBUG - IBM855 Russian confidence = 0.2346574155327167
+2021-07-12 11:11:24,764 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:11:24,764 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:11:24,764 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:11:24,764 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:11:24,764 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:11:24,764 - DEBUG - ISO-8859-9 Turkish confidence = 0.18594397594490347
+2021-07-12 11:11:24,765 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,765 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,765 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,765 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:11:24,765 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:11:24,765 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:11:24,765 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:11:24,765 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:11:24,765 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:11:24,765 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:11:24,765 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:24,768 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:11:24,813 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/320007.js?rt=1463558676006 HTTP/1.1" 200 154
+2021-07-12 11:11:24,817 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:11:24,818 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:11:24,818 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:11:24,818 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:11:24,818 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:11:24,818 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:11:24,819 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:11:24,819 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:24,819 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:11:24,819 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:11:24,819 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:11:24,820 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:11:24,820 - DEBUG - IBM866 Russian confidence = 0.07964130466564931
+2021-07-12 11:11:24,820 - DEBUG - IBM855 Russian confidence = 0.30339544634533067
+2021-07-12 11:11:24,821 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:11:24,821 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:11:24,821 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:11:24,821 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:11:24,821 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:11:24,821 - DEBUG - ISO-8859-9 Turkish confidence = 0.2000894971736644
+2021-07-12 11:11:24,821 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:11:24,822 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:11:24,822 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:11:24,822 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:11:24,822 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:11:24,822 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:11:24,822 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:11:24,822 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:11:24,822 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:11:24,823 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:11:24,823 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:11:39,575 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:11:39,576 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:11:52,386 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:11:52,387 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:12:03,011 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:12:03,012 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:12:26,867 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:12:26,936 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:12:26,942 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:12:26,942 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:12:26,942 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:12:26,942 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:12:26,942 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:12:26,943 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:12:26,943 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:12:26,943 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:12:26,943 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:12:26,943 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:12:26,943 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:12:26,943 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:12:26,943 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:12:26,943 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:12:26,943 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:12:26,944 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:12:26,944 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:26,944 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:12:26,944 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:12:26,944 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:12:26,945 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:12:26,945 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:12:26,945 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:12:26,945 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:12:26,945 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:12:26,948 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:12:26,984 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/008903.js?rt=1463558676006 HTTP/1.1" 200 159
+2021-07-12 11:12:26,989 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:12:26,989 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:12:26,990 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:12:26,991 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - IBM866 Russian confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - IBM855 Russian confidence = 0.2346574155327167
+2021-07-12 11:12:26,991 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:12:26,991 - DEBUG - ISO-8859-9 Turkish confidence = 0.18594397594490347
+2021-07-12 11:12:26,992 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:26,992 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:26,992 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:26,992 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:12:26,992 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:12:26,992 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:12:26,992 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:12:26,992 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:12:26,992 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:12:26,992 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:12:26,992 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:12:26,996 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:12:27,029 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/320007.js?rt=1463558676006 HTTP/1.1" 200 154
+2021-07-12 11:12:27,032 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:12:27,032 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:12:27,032 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:12:27,032 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:12:27,033 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:12:27,033 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:12:27,033 - DEBUG - IBM866 Russian confidence = 0.07964130466564931
+2021-07-12 11:12:27,033 - DEBUG - IBM855 Russian confidence = 0.30339544634533067
+2021-07-12 11:12:27,034 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:12:27,034 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:12:27,034 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:12:27,034 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:12:27,034 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:12:27,034 - DEBUG - ISO-8859-9 Turkish confidence = 0.2000894971736644
+2021-07-12 11:12:27,034 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:12:27,034 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:12:27,034 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:12:27,034 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:12:27,034 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:12:27,034 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:12:27,035 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:12:27,035 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:12:27,035 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:12:27,035 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:12:27,035 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,369 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:14:44,425 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/003096.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:14:44,430 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,430 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,430 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,430 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,430 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,430 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,430 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,431 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,431 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:14:44,431 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:14:44,431 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:14:44,431 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:14:44,431 - DEBUG - IBM866 Russian confidence = 0.17013483106595853
+2021-07-12 11:14:44,431 - DEBUG - IBM855 Russian confidence = 0.11915166620107533
+2021-07-12 11:14:44,431 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - TIS-620 Thai confidence = 0.12953563633301884
+2021-07-12 11:14:44,432 - DEBUG - ISO-8859-9 Turkish confidence = 0.19164416125399672
+2021-07-12 11:14:44,432 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,432 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,433 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,433 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,433 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,433 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,433 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,433 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,433 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,436 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:14:44,496 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:14:44,498 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,499 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:14:44,499 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:14:44,500 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:14:44,500 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:14:44,500 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:14:44,501 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:14:44,501 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,501 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,501 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,501 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,501 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,501 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,501 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,501 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,501 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,502 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,502 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,504 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:14:44,541 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/008903.js?rt=1463558676006 HTTP/1.1" 200 159
+2021-07-12 11:14:44,544 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,544 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,544 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,544 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:14:44,545 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:14:44,545 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:14:44,545 - DEBUG - IBM866 Russian confidence = 0.0
+2021-07-12 11:14:44,545 - DEBUG - IBM855 Russian confidence = 0.2346574155327167
+2021-07-12 11:14:44,545 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:14:44,545 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:14:44,546 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:14:44,546 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:14:44,546 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:14:44,546 - DEBUG - ISO-8859-9 Turkish confidence = 0.18594397594490347
+2021-07-12 11:14:44,546 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,546 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,547 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,547 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,547 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,547 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,547 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,547 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,547 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,548 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,548 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,551 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:14:44,584 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/320007.js?rt=1463558676006 HTTP/1.1" 200 154
+2021-07-12 11:14:44,587 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,587 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:14:44,588 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:14:44,588 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:14:44,588 - DEBUG - IBM866 Russian confidence = 0.07964130466564931
+2021-07-12 11:14:44,589 - DEBUG - IBM855 Russian confidence = 0.30339544634533067
+2021-07-12 11:14:44,589 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:14:44,589 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:14:44,589 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:14:44,589 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:14:44,589 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:14:44,589 - DEBUG - ISO-8859-9 Turkish confidence = 0.2000894971736644
+2021-07-12 11:14:44,589 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:14:44,589 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:14:44,589 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:14:44,589 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:14:44,590 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:14:44,590 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:14:44,590 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:14:44,590 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:14:44,590 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:14:44,590 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:14:44,590 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:15:13,449 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:15:13,451 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:15:27,587 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fund/urls.py changed, reloading.
+2021-07-12 11:15:27,588 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:15:35,960 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fund/urls.py changed, reloading.
+2021-07-12 11:15:35,961 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:15:43,324 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:15:43,326 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:17:00,963 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:17:00,964 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:17:13,810 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:17:13,812 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:17:29,961 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:17:29,963 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:17:37,254 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:17:37,256 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:18:02,329 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:18:02,331 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:18:05,394 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:18:05,396 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:18:11,668 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:18:11,669 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:18:16,746 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:18:16,747 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:18:32,084 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:18:32,086 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:19:05,535 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:19:05,580 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/003096.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:19:05,585 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,585 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,585 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,585 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,585 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,585 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,585 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,585 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,586 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:19:05,586 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:19:05,586 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:19:05,586 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:19:05,586 - DEBUG - IBM866 Russian confidence = 0.17013483106595853
+2021-07-12 11:19:05,586 - DEBUG - IBM855 Russian confidence = 0.11915166620107533
+2021-07-12 11:19:05,586 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:19:05,586 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:19:05,586 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:19:05,586 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:19:05,586 - DEBUG - TIS-620 Thai confidence = 0.12953563633301884
+2021-07-12 11:19:05,586 - DEBUG - ISO-8859-9 Turkish confidence = 0.19164416125399672
+2021-07-12 11:19:05,587 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,587 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,587 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,587 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,587 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,587 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,587 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,587 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,587 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,588 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,588 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,590 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:19:05,615 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 265
+2021-07-12 11:19:05,619 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,619 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,619 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,619 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:19:05,620 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:19:05,620 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:19:05,620 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:19:05,620 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:19:05,621 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:19:05,621 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,621 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,622 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,622 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,622 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,622 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,622 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,622 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,622 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,622 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,625 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:19:05,651 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/008903.js?rt=1463558676006 HTTP/1.1" 200 268
+2021-07-12 11:19:05,656 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,657 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,657 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,657 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,657 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,657 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,658 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,658 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,658 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:19:05,658 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:19:05,658 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:19:05,658 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:19:05,658 - DEBUG - IBM866 Russian confidence = 0.0
+2021-07-12 11:19:05,658 - DEBUG - IBM855 Russian confidence = 0.2346574155327167
+2021-07-12 11:19:05,659 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:19:05,659 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:19:05,659 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:19:05,659 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:19:05,659 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:19:05,659 - DEBUG - ISO-8859-9 Turkish confidence = 0.18594397594490347
+2021-07-12 11:19:05,659 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,660 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,660 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,660 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,660 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,660 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,660 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,660 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,661 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,661 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,661 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,665 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:19:05,686 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/320007.js?rt=1463558676006 HTTP/1.1" 200 154
+2021-07-12 11:19:05,690 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,690 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,690 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,690 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,690 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,690 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,691 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,691 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:05,691 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:19:05,691 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:19:05,691 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:19:05,691 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - IBM866 Russian confidence = 0.07964130466564931
+2021-07-12 11:19:05,692 - DEBUG - IBM855 Russian confidence = 0.30339544634533067
+2021-07-12 11:19:05,692 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - TIS-620 Thai confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - ISO-8859-9 Turkish confidence = 0.2000894971736644
+2021-07-12 11:19:05,692 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:19:05,692 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - windows-1255 Hebrew confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:19:05,693 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:19:05,693 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:19:34,319 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:19:34,320 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:19:41,543 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:19:41,544 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:20:28,174 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:20:28,175 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:20:48,878 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:20:48,879 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:20:57,279 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:20:57,280 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:22:02,947 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fund/urls.py changed, reloading.
+2021-07-12 11:22:02,948 - DEBUG - Using selector: KqueueSelector
+2021-07-12 11:22:18,472 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:22:18,514 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:22:18,518 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:22:18,519 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:22:18,519 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:22:18,519 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:22:18,520 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:22:18,520 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:22:18,520 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:22:18,520 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:22:18,521 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:22:18,521 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:22:18,521 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:22:18,521 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:22:18,521 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:22:18,521 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:22:18,521 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:22:18,521 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:22:18,598 - DEBUG - Starting new HTTPS connection (1): www.dayfund.cn:443
+2021-07-12 11:22:18,859 - DEBUG - https://www.dayfund.cn:443 "GET /fundvalue/004241.html?sdate=2021-04-07&edate=2021-07-12 HTTP/1.1" 200 None
+2021-07-12 11:22:18,881 - INFO - 004241----2021-07-09数据存在，无需同步
+2021-07-12 11:23:10,052 - INFO - admin004241删除自选股
+2021-07-12 11:23:21,129 - DEBUG - Starting new HTTP connection (1): fundgz.1234567.com.cn:80
+2021-07-12 11:23:21,175 - DEBUG - http://fundgz.1234567.com.cn:80 "GET /js/004241.js?rt=1463558676006 HTTP/1.1" 200 160
+2021-07-12 11:23:21,178 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:23:21,179 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:23:21,179 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:23:21,179 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:23:21,179 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:23:21,179 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:23:21,179 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:23:21,180 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:23:21,180 - DEBUG - windows-1251 Russian confidence = 0.01
+2021-07-12 11:23:21,180 - DEBUG - KOI8-R Russian confidence = 0.01
+2021-07-12 11:23:21,180 - DEBUG - ISO-8859-5 Russian confidence = 0.0
+2021-07-12 11:23:21,180 - DEBUG - MacCyrillic Russian confidence = 0.0
+2021-07-12 11:23:21,180 - DEBUG - IBM866 Russian confidence = 0.10119130475164852
+2021-07-12 11:23:21,180 - DEBUG - IBM855 Russian confidence = 0.0
+2021-07-12 11:23:21,180 - DEBUG - ISO-8859-7 Greek confidence = 0.0
+2021-07-12 11:23:21,180 - DEBUG - windows-1253 Greek confidence = 0.0
+2021-07-12 11:23:21,180 - DEBUG - ISO-8859-5 Bulgairan confidence = 0.0
+2021-07-12 11:23:21,180 - DEBUG - windows-1251 Bulgarian confidence = 0.0
+2021-07-12 11:23:21,181 - DEBUG - TIS-620 Thai confidence = 0.25907127266603763
+2021-07-12 11:23:21,181 - DEBUG - ISO-8859-9 Turkish confidence = 0.18445750520697185
+2021-07-12 11:23:21,181 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:23:21,181 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:23:21,181 - DEBUG - windows-1255 Hebrew confidence = 0.0
+2021-07-12 11:23:21,181 - DEBUG - utf-8  confidence = 0.99
+2021-07-12 11:23:21,181 - DEBUG - SHIFT_JIS Japanese confidence = 0.01
+2021-07-12 11:23:21,181 - DEBUG - EUC-JP Japanese confidence = 0.01
+2021-07-12 11:23:21,181 - DEBUG - GB2312 Chinese confidence = 0.01
+2021-07-12 11:23:21,181 - DEBUG - EUC-KR Korean confidence = 0.01
+2021-07-12 11:23:21,181 - DEBUG - CP949 Korean confidence = 0.01
+2021-07-12 11:23:21,181 - DEBUG - Big5 Chinese confidence = 0.01
+2021-07-12 11:23:21,181 - DEBUG - EUC-TW Taiwan confidence = 0.01
+2021-07-12 11:23:21,240 - DEBUG - Starting new HTTPS connection (1): www.dayfund.cn:443
+2021-07-12 11:23:21,361 - DEBUG - https://www.dayfund.cn:443 "GET /fundvalue/004241.html?sdate=2021-04-07&edate=2021-07-12 HTTP/1.1" 200 9533
+2021-07-12 11:23:21,376 - INFO - 004241----2021-07-09数据存在，无需同步
+2021-07-12 11:24:11,895 - INFO - /Users/kori/Documents/daima/fundResearchAssistant/fundPlan/views.py changed, reloading.
+2021-07-12 11:24:11,896 - DEBUG - Using selector: KqueueSelector

@@ -42,6 +42,20 @@ def addFundList(request):
     return JsonResponse({"code": 0, "data": "成功"})
 
 
+def removeFundList(request):
+    fundcode = request.GET.get("fundcode")
+    account = request.GET.get("account")
+    try:
+        fundList.objects.filter(account=account,fundcode=fundcode).delete()
+        logging.info(account +fundcode + "删除自选股")
+    except Exception as e:
+        logging.error(e)
+        logging.error(traceback.format_exc())
+        logging.error(account +fundcode + "删除自选股失败")
+        return JsonResponse({"code": -1, "data": "失败"})
+    return JsonResponse({"code": 0, "data": "成功"})
+
+
 # 同步所有基金历史数据
 def synchronousData(request):
     list_text = list(fundData.objects.values("fundcode").distinct())
@@ -60,3 +74,26 @@ def synchronousData(request):
         logging.error("同步失败")
         return JsonResponse({"code": -6, "data": "同步失败"})
     return JsonResponse({"code": 0, "data": "成功"})
+
+
+
+def userLiveData(request):
+    account = request.GET.get("account")
+    list_text = fundList.objects.filter(account=account)
+    if len(list_text) == 0:
+        logging.info(account+"用户自选股数据为空")
+        return JsonResponse({"code": -7, "data": "用户自选股数据为空"})
+    fund_list = []
+    for i in list_text:
+        text = requests.get("http://fundgz.1234567.com.cn/js/" + str(i.fundcode) + ".js?rt=1463558676006").text[8:-2]
+        try:
+            json_text = json.loads(text)
+            print(json_text)
+            fund_list.append(json_text)
+        except Exception as e:
+            logging.error("用户实时数据查询失败")
+            logging.error(e)
+            logging.error(traceback.format_exc())
+            return JsonResponse({"code": -2, "data": "失败"})
+    return JsonResponse({"code": 0, "data": fund_list})
+

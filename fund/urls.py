@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from fundPlan import views
 urlpatterns = [
-    url(r'^addFundList/', views.addFundList),
-    url(r'^synchronousData/', views.synchronousData),
+    url(r'^addfundlist/', views.addFundList),
+    url(r'^removefundlist/', views.removeFundList),
+    url(r'^synchronousdata/', views.synchronousData),
+    url(r'^userlivedata/', views.userLiveData),
 ]
