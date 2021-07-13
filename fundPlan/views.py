@@ -7,6 +7,9 @@ from fundPlan.models import fundList, fundData
 from tool.historicalData import getHistoricalData
 import json
 import requests
+import re
+
+
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
 # 添加自选股数据
@@ -82,6 +85,7 @@ def synchronousData(request):
 
 
 
+# 用户实时数据
 def userLiveData(request):
     account = request.GET.get("account")
     list_text = fundList.objects.filter(account=account)
@@ -101,3 +105,11 @@ def userLiveData(request):
             logging.error(traceback.format_exc())
             return JsonResponse({"code": -2, "data": "失败"})
     return JsonResponse({"code": 0, "data": fund_list})
+
+
+# 大盘数据
+def marketData(request):
+    text = str(requests.get("https://www.dayfund.cn/ajs/ajaxdata.shtml?showtype=getstockvalue&stockcode=sh000001,sz399001,sz399006,sh000300,sh000011").text)
+    text1 = re.findall("[\u4e00-\u9fa5]",text)
+    
+    return JsonResponse({"code": 0, "data": "成功"})
