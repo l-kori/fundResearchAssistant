@@ -1,16 +1,34 @@
-import Vue from 'vue'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+/*!
 
-import App from './App'
+=========================================================
+* Vue Argon Dashboard - v2.0.0
+=========================================================
 
-Vue.config.productionTip = false
+* Product Page: https://www.creative-tim.com/product/vue-argon-dashboard
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/vue-argon-dashboard/blob/master/LICENSE.md)
 
-Vue.use(ElementUI)
+* Coded by Creative Tim
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
-})
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import ArgonDashboard from "./plugins/argon-dashboard";
+import "element-plus/lib/theme-chalk/index.css";
+
+
+const appInstance = createApp(App);
+appInstance.use(router);
+appInstance.use(ArgonDashboard);
+appInstance.mount("#app");
+//导入axios
+import Axios from 'axios';
+//全局使用axios
+// Vue.prototype.$axios = Axios;
+//配置请求头，非常重要，有了这个才可以正常使用POST等请求后台数据
+Axios.defaults.headers.post['Content-Type'] = 'application/x-www-fromurlencodeed'
