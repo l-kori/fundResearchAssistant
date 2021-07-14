@@ -5,10 +5,12 @@ from django.db.models import Avg
 from django.http import JsonResponse
 from fundPlan.models import fundList, fundData
 from tool.historicalData import getHistoricalData
+from tool.gainsCount import isoperationfund
 import json
 import requests
-import re
-
+from django.db.models import Avg
+import datetime
+import time
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
@@ -107,9 +109,26 @@ def userLiveData(request):
     return JsonResponse({"code": 0, "data": fund_list})
 
 
-# 大盘数据
-def marketData(request):
-    text = str(requests.get("https://www.dayfund.cn/ajs/ajaxdata.shtml?showtype=getstockvalue&stockcode=sh000001,sz399001,sz399006,sh000300,sh000011").text)
-    text1 = re.findall("[\u4e00-\u9fa5]",text)
-    
-    return JsonResponse({"code": 0, "data": "成功"})
+# 定时检查数据，是否需要加仓
+def fundTips(request):
+    account = request.GET.get("account")
+    fundcode = request.GET.get("fundcode")
+    # 查询基金今日涨幅
+    text = requests.get("http://fundgz.1234567.com.cn/js/" + fundcode + ".js?rt=1463558676006").text[8:-2]
+    try:
+        json_text = json.loads(text)
+    except Exception as e:
+        logging.error("用户实时数据查询失败")
+        logging.error(e)
+        logging.error(traceback.format_exc())
+        return JsonResponse({"code": -2, "data": "失败"})
+    isoperation = isoperationfund(fundcode,json_text['gszzl'],0)
+    if isoperation == 1:
+        return JsonResponse({"code": 1, "data": "建议加仓"})
+    if isoperation == 0:
+        return JsonResponse({"code": 0, "data": "不建议操作"})
+    if isoperation == 2:
+        return JsonResponse({"code": 2, "data": "建议减仓"})       
+    return JsonResponse({"code": 0, "data": "不建议操作"})
+
+

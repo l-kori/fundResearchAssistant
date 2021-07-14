@@ -5,5 +5,5 @@ urlpatterns = [
     url(r'^removefundlist/', views.removeFundList),
     url(r'^synchronousdata/', views.synchronousData),
     url(r'^userlivedata/', views.userLiveData),
-    url(r'^marketdata/', views.marketData),
+    url(r'^fundtips/', views.fundTips),
 ]

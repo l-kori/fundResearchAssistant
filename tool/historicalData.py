@@ -33,7 +33,6 @@ def getHistoricalData(code):
     response = requests.request("GET", url, headers=headers, data=payload)
     json_text = response.text
     txt = re.findall("<td>.*?</td>|<td class=\"green\">.*?</td>|<td class=\"red\">.*?</td>", json_text)[9:371]
-    print(txt)
     for i in range(0, len(txt)):
         if i % 9 == 0:
             code = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
@@ -51,11 +50,13 @@ def getHistoricalData(code):
                     funddata.fundcode = code
                     funddata.name = str(txt[i+2]).replace("<td>", "").replace("</td>", "")
                     funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
-                    if fundData.objects.filter(fundcode=code).aggregate(Avg("jrzf"))['jrzf__avg'] != None:
-                        funddata.pjzf = fundData.objects.filter(fundcode=code).aggregate(Avg("jrzf"))['jrzf__avg']
+                    if len(re.findall("green",txt[i+8])) >0:
+                        jrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
+                        jrzf = -jrzf
                     else:
-                        funddata.pjzf = 0
-                    funddata.jrzf = re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0]
+                        jrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
+                    funddata.jdzjrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
+                    funddata.jrzf = jrzf
                     funddata.save()
                     logging.info(code + "----" + date+"同步成功")
                     i += 9
