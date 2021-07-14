@@ -4,65 +4,85 @@
       <div class="row">
         <div class="col-xl-3 col-lg-6">
           <stats-card
-            title="上证指数"
+            title="基金指数"
             type="gradient-red"
-            sub-title="350,897"
+            :sub-title="jjjz"
             icon="ni ni-active-40"
             class="mb-4 mb-xl-0"
           >
             <template v-slot:footer>
-              <span class="text-success mr-2">
-                <i class="fa fa-arrow-up"></i> 3.48%
-              </span>
-              <span class="text-nowrap">Since last month</span>
+              <i
+              class="fas mr-3"
+              :class="
+                 jjzf >= 0
+                  ? 'text-danger fa-arrow-up'
+                  : 'text-success fa-arrow-down'
+              "
+            >{{ jjzf }}%
+            </i>
+            </template>
+          </stats-card>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <stats-card
+            title="上证指数"
+            type="gradient-orange"
+            :sub-title="szjz"
+            icon="ni ni-chart-pie-35"
+            class="mb-4 mb-xl-0"
+          >
+            <template v-slot:footer>
+              <i
+              class="fas mr-3"
+              :class="
+                 szzf >= 0
+                  ? 'text-danger fa-arrow-up'
+                  : 'text-success fa-arrow-down'
+              "
+            >{{ szzf }}%
+            </i>
             </template>
           </stats-card>
         </div>
         <div class="col-xl-3 col-lg-6">
           <stats-card
             title="深证成指"
-            type="gradient-orange"
-            sub-title="2,356"
-            icon="ni ni-chart-pie-35"
+            type="gradient-green"
+            :sub-title="szczjz"
+            icon="ni ni-money-coins"
             class="mb-4 mb-xl-0"
           >
             <template v-slot:footer>
-              <span class="text-success mr-2">
-                <i class="fa fa-arrow-up"></i> 12.18%
-              </span>
-              <span class="text-nowrap">Since last month</span>
+              <i
+              class="fas mr-3"
+              :class="
+                 szczzf >= 0
+                  ? 'text-danger fa-arrow-up'
+                  : 'text-success fa-arrow-down'
+              "
+            >{{ szczzf }}%
+            </i>
             </template>
           </stats-card>
         </div>
         <div class="col-xl-3 col-lg-6">
           <stats-card
             title="创业板指"
-            type="gradient-green"
-            sub-title="924"
-            icon="ni ni-money-coins"
-            class="mb-4 mb-xl-0"
-          >
-            <template v-slot:footer>
-              <span class="text-danger mr-2">
-                <i class="fa fa-arrow-down"></i> 5.72%
-              </span>
-              <span class="text-nowrap">Since last month</span>
-            </template>
-          </stats-card>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-          <stats-card
-            title="沪深300"
             type="gradient-info"
-            sub-title="49,65%"
+            :sub-title="cybjj"
             icon="ni ni-chart-bar-32"
             class="mb-4 mb-xl-0"
           >
             <template v-slot:footer>
-              <span class="text-success mr-2">
-                <i class="fa fa-arrow-up"></i> 54.8%
-              </span>
-              <span class="text-nowrap">Since last month</span>
+              <i
+              class="fas mr-3"
+              :class="
+                 cybzf >= 0
+                  ? 'text-danger fa-arrow-up'
+                  : 'text-success fa-arrow-down'
+              "
+            >{{ cybzf }}%
+            </i>
             </template>
           </stats-card>
         </div>
@@ -70,7 +90,7 @@
     </base-header>
 
     <div class="container-fluid mt--7">
-      <!--Charts--> 
+      <!--Charts-->
       <div class="row">
         <div class="col-xl-12 mb-5 mb-xl-0">
           <card type="default" header-classes="bg-transparent">
@@ -113,24 +133,6 @@
             </div>
           </card>
         </div>
-
-        <!-- <div class="col-xl-4">
-          <card header-classes="bg-transparent">
-            <template v-slot:header>
-              <div class="row align-items-center">
-                <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1">
-                    Performance1
-                  </h6>
-                  <h5 class="h3 mb-0">Total orders</h5>
-                </div>
-              </div>
-            </template>
-            <div class="chart-area">
-              <canvas :height="350" :id="ordersChartID"></canvas>
-            </div>
-          </card>
-        </div> -->
       </div>
       <!-- End charts-->
 
@@ -148,12 +150,11 @@
   </div>
 </template>
 <script>
-// Charts
-// import { ordersChart } from "@/components/Charts/Chart";
 import Chart from "chart.js";
 
 import PageVisitsTable from "./Dashboard/PageVisitsTable";
 import SocialTrafficTable from "./Dashboard/SocialTrafficTable";
+import axios from "axios";
 let chart;
 
 export default {
@@ -167,14 +168,103 @@ export default {
       // ordersChartID: "ordersChart",
       bigLineChart: {
         allData: [
-          [0, 20, 10, 30, 15, 40, 20, 60, 60, 15, 40, 20, 60, 60, 15, 40, 20, 60, 60],
+          [
+            0, 20, 10, 30, 15, 40, 20, 60, 60, 15, 40, 20, 60, 60, 15, 40, 20,
+            60, 60,
+          ],
           [0, 20, 5, 25, 10, 30, 15, 40, 40],
         ],
         activeIndex: 0,
       },
+      jjjz: "909,099",
+      jjzf: "-",
+      szjz: "-",
+      szzf: "-",
+      szczjz: "-",
+      szczzf: "-",
+      cybjj: "-",
+      cybzf: "-",
     };
   },
+
   methods: {
+    // 基金
+    getjjzsValue() {
+      axios({
+        url: "http://push2.eastmoney.com/api/qt/stock/get?secid=1.000011&ut=bd1d9ddb04089700cf9c27f6f7426281&fields=f118,f107,f57,f58,f59,f152,f43,f169,f170,f46,f60,f44,f45,f168,f50,f47,f48,f49,f46,f169,f161,f117,f85,f47,f48,f163,f171,f113,f114,f115,f86,f117,f85,f119,f120,f121,f122,f292&invt=2&_=1626235093935",
+        method: "get",
+      }).then((response) => {
+        // 上证净值
+        const jjjz = response.data.data["f43"] / 100;
+        // 上证昨收
+        const jjzs = response.data.data["f60"] / 100;
+        // 计算涨幅
+        const jjzf = (((jjjz - jjzs) / jjzs) * 100).toFixed(2);
+        this.jjjz = jjjz;
+        this.jjzf = jjzf;
+      }),
+        (err) => {
+          console.log(err);
+        };
+    },
+    // 上证
+    getszzsValue() {
+      axios({
+        url: "http://push2.eastmoney.com/api/qt/stock/get?secid=1.000001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields=f118,f107,f57,f58,f59,f152,f43,f169,f170,f46,f60,f44,f45,f168,f50,f47,f48,f49,f46,f169,f161,f117,f85,f47,f48,f163,f171,f113,f114,f115,f86,f117,f85,f119,f120,f121,f122,f292&invt=2&_=1626235093935",
+        method: "get",
+      }).then((response) => {
+        // 上证净值
+        const jjjz = response.data.data["f43"] / 100;
+        // 上证昨收
+        const jjzs = response.data.data["f60"] / 100;
+        // 计算涨幅
+        const jjzf = (((jjjz - jjzs) / jjzs) * 100).toFixed(2);
+        this.szjz = jjjz;
+        this.szzf = jjzf;
+      }),
+        (err) => {
+          console.log(err);
+        };
+    },
+    // 深证
+    getszczValue() {
+      axios({
+        url: "http://push2.eastmoney.com/api/qt/stock/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields=f118,f107,f57,f58,f59,f152,f43,f169,f170,f46,f60,f44,f45,f168,f50,f47,f48,f49,f46,f169,f161,f117,f85,f47,f48,f163,f171,f113,f114,f115,f86,f117,f85,f119,f120,f121,f122,f292&invt=2&_=1626235093935",
+        method: "get",
+      }).then((response) => {
+        // 上证净值
+        const jjjz = response.data.data["f43"] / 100;
+        // 上证昨收
+        const jjzs = response.data.data["f60"] / 100;
+        // 计算涨幅
+        const jjzf = (((jjjz - jjzs) / jjzs) * 100).toFixed(2);
+        // console.log(jjjz, jjzf);
+        this.szczjz = jjjz;
+        this.szczzf = jjzf;
+      }),
+        (err) => {
+          console.log(err);
+        };
+    },
+    // 创业板
+    getcybValue() {
+      axios({
+        url: "http://push2.eastmoney.com/api/qt/stock/get?secid=0.395004&ut=bd1d9ddb04089700cf9c27f6f7426281&fields=f118,f107,f57,f58,f59,f152,f43,f169,f170,f46,f60,f44,f45,f168,f50,f47,f48,f49,f46,f169,f161,f117,f85,f47,f48,f163,f171,f113,f114,f115,f86,f117,f85,f119,f120,f121,f122,f292&invt=2&_=1626235093935",
+        method: "get",
+      }).then((response) => {
+        // 上证净值
+        const jjjz = response.data.data["f43"] / 100;
+        // 上证昨收
+        const jjzs = response.data.data["f60"] / 100;
+        // 计算涨幅
+        const jjzf = (((jjjz - jjzs) / jjzs) * 100).toFixed(2);
+        this.cybjj = jjjz;
+        this.cybzf = jjzf;
+      }),
+        (err) => {
+          console.log(err);
+        };
+    },
     initBigChart(index) {
       chart.destroy();
       chart = new Chart(
@@ -182,7 +272,30 @@ export default {
         {
           type: "line",
           data: {
-            labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            labels: [
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ],
             datasets: [
               {
                 label: "Performance",
@@ -250,12 +363,47 @@ export default {
     },
   },
   mounted() {
+    //定时请求大盘
+    const that = this;
+    that.getjjzsValue();
+    that.getszzsValue();
+    that.getszczValue();
+    that.getcybValue();
+    that.timer = setInterval(function () {
+      that.getjjzsValue();
+      that.getszzsValue();
+      that.getszczValue();
+      that.getcybValue();
+    }, 12000);
     chart = new Chart(
       document.getElementById(this.salesChartID).getContext("2d"),
       {
         type: "line",
         data: {
-          labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          labels: [
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
           datasets: [
             {
               label: "Performance",

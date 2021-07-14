@@ -81,7 +81,6 @@ export default {
         },
       }).then((response) => {
         this.tableData = response.data.data;
-        console.log(this, this.tableData);
       }),
         (err) => {
           console.log(err);
