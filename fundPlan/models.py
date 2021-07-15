@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.query import FlatValuesListIterable
 
 class fundData(models.Model):
     # 基金代码
@@ -17,6 +18,10 @@ class fundData(models.Model):
 class fundList(models.Model):
     account = models.CharField(max_length=10, null=False,default="admin")
     fundcode = models.CharField(max_length=10, null=False)
+    # 是否购买
+    isbuy = models.IntegerField(null=FlatValuesListIterable)
+    # 买入时间
+    buytime = models.DateTimeField(max_length=18, null=False,default="2020-01-01")
 
 class fundtipslog(models.Model):
     account = models.CharField(max_length=10, null=False,default="admin")

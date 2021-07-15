@@ -18,6 +18,10 @@ logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
 def addFundList(request):
     fundcode = request.GET.get("fundcode")
     account = request.GET.get("account")
+    # 1= 买了，0=没买
+    isbuy = request.GET.get("isbuy",0)
+    buytime = request.GET.get("buytime")
+
     isexit = fundList.objects.filter(account=account,fundcode=fundcode)
     if len(isexit) != 0:
         logging.info("数据已存在，无需再添加")
@@ -31,10 +35,13 @@ def addFundList(request):
         logging.error(traceback.format_exc())
         return JsonResponse({"code": -2, "data": "失败"})
     fund_code = json_text['fundcode']
+
     try:
         funddata = fundList()
         funddata.fundcode = fund_code
         funddata.account = account
+        funddata.isbuy = isbuy
+        funddata.buytime = buytime
         funddata.save()
     except Exception as e:
         logging.error(e)
@@ -122,13 +129,14 @@ def fundTips(request):
         logging.error(e)
         logging.error(traceback.format_exc())
         return JsonResponse({"code": -2, "data": "失败"})
-    isoperation = isoperationfund(fundcode,json_text['gszzl'],0)
+    isoperation = isoperationfund(account,fundcode,json_text['gszzl'],0)
     if isoperation == 1:
         return JsonResponse({"code": 1, "data": "建议加仓"})
     if isoperation == 0:
+        logging.info(account+"--"+fundcode+"--未达到持仓操作要求，不建议操作")
         return JsonResponse({"code": 0, "data": "不建议操作"})
     if isoperation == 2:
-        return JsonResponse({"code": 2, "data": "建议减仓"})       
+        return JsonResponse({"code": 2, "data": "建议减仓"})
     return JsonResponse({"code": 0, "data": "不建议操作"})
 
 
