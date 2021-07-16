@@ -21,7 +21,7 @@ def addFundListt(request):
         text = f.read()
     texts = re.findall("<a href=\"/fundinfo/(.*?).html",text)
     for k in texts:
-        req = requests.get("http://127.0.0.1:8000/addfundlist?account=lxd&fundcode="+str(k)+"&isbuy=1&buytime=2021-07-15")
+        req = requests.get("http://121.5.252.114:8000/addfundlist?account=lxd&fundcode="+str(k)+"&isbuy=1&buytime=2021-07-15")
         logging.log(req.text)
     return JsonResponse({"code": -2, "data": "失败"})
 
