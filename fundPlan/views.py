@@ -149,6 +149,3 @@ def fundTips(request):
         return JsonResponse({"code": 2, "data": "建议减仓"})
     return JsonResponse({"code": 0, "data": "不建议操作"})
 
-
-def test(request):
-    return JsonResponse({"code": 0, "data": "不建议操作"})

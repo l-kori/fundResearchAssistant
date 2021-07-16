@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'fundPlan',
+    'mysite',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,5 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
 #允许所有的请求头
 CORS_ALLOW_HEADERS = ('*')
+
+APPEND_SLASH = True
