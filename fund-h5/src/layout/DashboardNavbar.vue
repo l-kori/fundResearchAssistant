@@ -14,6 +14,7 @@
           class="input-group-alternative"
           alternative=""
           addon-right-icon="fas fa-search"
+          @input="inputStr"
         >
         </base-input>
       </div>
@@ -70,6 +71,7 @@ export default {
       activeNotifications: false,
       showMenu: false,
       searchQuery: "",
+      searchWord:''
     };
   },
   methods: {
@@ -82,6 +84,9 @@ export default {
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
+    inputStr(value){
+      console.log(value)
+    }
   },
 };
 </script>

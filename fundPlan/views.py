@@ -11,10 +11,20 @@ import requests
 from django.db.models import Avg
 import datetime
 import time
+import re
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
 # 添加自选股数据
+def addFundListt(request):
+    with open("ss.txt", "r") as f:  # 打开文件
+        text = f.read()
+    texts = re.findall("<a href=\"/fundinfo/(.*?).html",text)
+    for k in texts:
+        req = requests.get("http://127.0.0.1:8000/addfundlist?account=lxd&fundcode="+str(k)+"&isbuy=1&buytime=2021-07-15")
+        print(req)
+    return JsonResponse({"code": -2, "data": "失败"})
+
 def addFundList(request):
     fundcode = request.GET.get("fundcode")
     account = request.GET.get("account")

@@ -97,11 +97,10 @@
             <template v-slot:header>
               <div class="row align-items-center">
                 <div class="col">
-                  <h6 class="text-light text-uppercase ls-1 mb-1">实时数据</h6>
-                  <h5 class="h3 text-white mb-0">Sales value</h5>
+                  <h5 class="h3 text-white mb-0">单位净值</h5>
                 </div>
                 <div class="col">
-                  <ul class="nav nav-pills justify-content-end">
+                  <!-- <ul class="nav nav-pills justify-content-end">
                     <li class="nav-item mr-2 mr-md-0">
                       <a
                         class="nav-link py-2 px-3"
@@ -124,7 +123,7 @@
                         <span class="d-md-none">W</span>
                       </a>
                     </li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
             </template>

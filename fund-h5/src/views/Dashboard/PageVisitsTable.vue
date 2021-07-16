@@ -77,7 +77,7 @@ export default {
         url: "http://localhost:8000/userlivedata",
         method: "get",
         params: {
-          account: "lxd",
+          account: "lxd1",
         },
       }).then((response) => {
         this.tableData = response.data.data;

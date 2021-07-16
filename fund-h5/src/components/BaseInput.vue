@@ -132,6 +132,7 @@ export default {
   methods: {
     updateValue(evt) {
       let value = evt.target.value;
+      console.log(evt,value);
       this.$emit("input", value);
     },
     onFocus(value) {
