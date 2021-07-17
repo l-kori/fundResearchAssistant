@@ -1,4 +1,5 @@
 import logging
+from os import access
 import traceback
 
 from django.db.models import Avg
@@ -148,4 +149,22 @@ def fundTips(request):
     if isoperation == 2:
         return JsonResponse({"code": 2, "data": "建议减仓"})
     return JsonResponse({"code": 0, "data": "不建议操作"})
+
+
+
+def fundProfit(request):
+    # 查询列表里所有已经买了的基金则进行当日交易计算
+    fund_result = fundList.objects.filter(isbuy=1)
+    for i in  range(0,len(fund_result)):
+        # 查询这只基金的当天实际涨幅
+        fund_zf = fundData.objects.get(fundcode=fund_result[i].fundcode,jzrq='2021-07-15')
+        profit = fundList.objects.get(fundcode=fund_result[i].fundcode,account=fund_result[i].account)
+        profit.fundPosition += fund_result[i].fundPosition*fund_zf.jrzf/100
+        if fund_result[i].fundProfitRate ==0:
+            profit.fundProfitRate += fund_zf.jrzf
+        profit.fundProfitRate += fund_zf.jrzf*fund_result[i].fundProfitRate/10
+        profit.fundProfitMoney += fund_zf.jrzf*fund_result[i].fundPosition/100
+        profit.save()
+       
+    return JsonResponse({"code": 0, "data": "成功"})
 
