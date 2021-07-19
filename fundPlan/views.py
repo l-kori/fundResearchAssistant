@@ -7,11 +7,14 @@ from django.http import JsonResponse
 from fundPlan.models import fundList, fundData
 from tool.historicalData import getHistoricalData
 from tool.gainsCount import isoperationfund
+from tool.sendEmail import remindWarehouse
 import json
 import requests
 from django.db.models import Avg
 import datetime
+from django.core import serializers
 import time
+
 import re
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
@@ -142,11 +145,18 @@ def fundTips(request):
         return JsonResponse({"code": -2, "data": "失败"})
     isoperation = isoperationfund(account,fundcode,json_text['gszzl'],0)
     if isoperation == 1:
+        # 发送邮件
+        res = remindWarehouse(fundcode,account,1)
+        if res:
+            logging.info(account+"----"+fundcode+"调仓邮件已发送")
         return JsonResponse({"code": 1, "data": "建议加仓"})
     if isoperation == 0:
         logging.info(account+"--"+fundcode+"--未达到持仓操作要求，不建议操作")
         return JsonResponse({"code": 0, "data": "不建议操作"})
     if isoperation == 2:
+        res = remindWarehouse(fundcode,account,2)
+        if res:
+            logging.info(account+"----"+fundcode+"调仓邮件已发送")
         return JsonResponse({"code": 2, "data": "建议减仓"})
     return JsonResponse({"code": 0, "data": "不建议操作"})
 
@@ -168,3 +178,8 @@ def fundProfit(request):
        
     return JsonResponse({"code": 0, "data": "成功"})
 
+def queryFundToCode(request):
+    fundcode = request.GET.get("fundcode")
+    req = fundList.objects.filter(fundcode__contains=fundcode,account='lxd')
+    print(req)
+    return JsonResponse({"code": 0, "data": "json_req"})
