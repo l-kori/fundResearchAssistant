@@ -181,16 +181,24 @@ def fundProfit(request):
 
 def queryFundToCode(request):
     fundcode = request.GET.get("fundcode")
-    req = fundList.objects.filter(fundcode__contains=fundcode,account='lxd')[:10]
-    print(req)
-    infos = []
-    for i in req:
-        infos.append(model_to_dict(i))  # 对象转为字典
-        res = {
-            "code": 0,
-            "data": {
-                "infos": infos,
-                "total": len(infos)
+    try:
+        req = fundList.objects.filter(fundcode__contains=fundcode,account='lxd')[:6]
+        if len(req)==0:
+            logging.info("没有这个基金")
+            return JsonResponse({"code": -11, "data": "失败"})
+        infos = []
+        for i in req:
+            infos.append(model_to_dict(i))  # 对象转为字典
+            res = {
+                "code": 0,
+                "data": {
+                    "infos": infos,
+                    "total": len(infos)
+                }
             }
-        }
+    except Exception as e:
+        logging.error("查询基金数据失败")
+        logging.error(e)
+        logging.error(traceback.format_exc())
+        return JsonResponse({"code": -1, "data": "失败"})
     return JsonResponse(res)
