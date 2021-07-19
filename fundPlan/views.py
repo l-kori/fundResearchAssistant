@@ -12,6 +12,7 @@ import json
 import requests
 from django.db.models import Avg
 import datetime
+from django.forms.models import model_to_dict
 from django.core import serializers
 import time
 
@@ -180,6 +181,16 @@ def fundProfit(request):
 
 def queryFundToCode(request):
     fundcode = request.GET.get("fundcode")
-    req = fundList.objects.filter(fundcode__contains=fundcode,account='lxd')
+    req = fundList.objects.filter(fundcode__contains=fundcode,account='lxd')[:10]
     print(req)
-    return JsonResponse({"code": 0, "data": "json_req"})
+    infos = []
+    for i in req:
+        infos.append(model_to_dict(i))  # 对象转为字典
+        res = {
+            "code": 0,
+            "data": {
+                "infos": infos,
+                "total": len(infos)
+            }
+        }
+    return JsonResponse(res)
