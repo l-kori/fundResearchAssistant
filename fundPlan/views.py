@@ -100,6 +100,7 @@ def synchronousData(request):
             fundcode = str(list_text[i].values())[14:-3]
             getHistoricalData(fundcode)
             logging.info(fundcode+"数据同步完成")
+            logging.info("剩余未同步的数据"+len(list_text)-i)
     except Exception as e:
         logging.error(e)
         logging.error(traceback.format_exc())
@@ -133,33 +134,34 @@ def userLiveData(request):
 
 # 定时检查数据，是否需要加仓
 def fundTips(request):
-    account = request.GET.get("account")
-    fundcode = request.GET.get("fundcode")
-    # 查询基金今日涨幅
-    text = requests.get("http://fundgz.1234567.com.cn/js/" + fundcode + ".js?rt=1463558676006").text[8:-2]
-    try:
-        json_text = json.loads(text)
-    except Exception as e:
-        logging.error("用户实时数据查询失败")
-        logging.error(e)
-        logging.error(traceback.format_exc())
-        return JsonResponse({"code": -2, "data": "失败"})
-    isoperation = isoperationfund(account,fundcode,json_text['gszzl'],0)
-    if isoperation == 1:
-        # 发送邮件
-        res = remindWarehouse(fundcode,account,1)
-        if res:
-            logging.info(account+"----"+fundcode+"调仓邮件已发送")
-        return JsonResponse({"code": 1, "data": "建议加仓"})
-    if isoperation == 0:
-        logging.info(account+"--"+fundcode+"--未达到持仓操作要求，不建议操作")
-        return JsonResponse({"code": 0, "data": "不建议操作"})
-    if isoperation == 2:
-        res = remindWarehouse(fundcode,account,2)
-        if res:
-            logging.info(account+"----"+fundcode+"调仓邮件已发送")
-        return JsonResponse({"code": 2, "data": "建议减仓"})
-    return JsonResponse({"code": 0, "data": "不建议操作"})
+    # 查询数据，已购买的数据进行检查
+    fund_list = fundList.objects.filter(isbuy='1')
+    warehouseList = []
+    for i in range(0,len(fund_list)):
+        # 查询基金今日涨幅
+        text = requests.get("http://fundgz.1234567.com.cn/js/" + fund_list[i].fundcode + ".js?rt=1463558676006").text[8:-2]
+        try:
+            json_text = json.loads(text)
+        except Exception as e:
+            logging.error("用户实时数据查询失败")
+            logging.error(e)
+            logging.error(traceback.format_exc())
+            return JsonResponse({"code": -2, "data": "失败"})
+        isoperation = isoperationfund(fund_list[i].account,fund_list[i].fundcode,json_text['gszzl'],0)
+        if isoperation == 1:
+            # 发送邮件
+            res = remindWarehouse(fund_list[i].fundcode,fund_list[i].account,1)
+            if res:
+                logging.info(fund_list[i].account+"----"+fund_list[i].fundcode+"调仓邮件已发送")
+        if isoperation == 0:
+            logging.info(fund_list[i].account+"--"+fund_list[i].fundcode+"--未达到持仓操作要求，不建议操作")
+            
+        if isoperation == 2:
+            res = remindWarehouse(fund_list[i].fundcode,fund_list[i].account,2)
+            if res:
+                logging.info(fund_list[i].account+"----"+fund_list[i].fundcode+"调仓邮件已发送")
+            
+        return JsonResponse({"code": 0, "data": "完成"})
 
 
 
@@ -202,3 +204,4 @@ def queryFundToCode(request):
         logging.error(traceback.format_exc())
         return JsonResponse({"code": -1, "data": "失败"})
     return JsonResponse(res)
+

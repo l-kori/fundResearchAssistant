@@ -69,12 +69,13 @@ export default {
     that.getList();
     that.timer = setInterval(function () {
       that.getList()
-    }, 120000);
+      console.log("1111111111")
+    }, 10000);
   },
   methods: {
     getList() {
       axios({
-        url: "http://localhost:8000/userlivedata",
+        url: "http://localhost:8000/userlivedata/",
         method: "get",
         params: {
           account: "lxd1",

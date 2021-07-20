@@ -14,9 +14,13 @@
           class="input-group-alternative"
           alternative=""
           addon-right-icon="fas fa-search"
-          @input="inputStr"
+          @input="search($event)"
+          @keyup="getsearch"
         >
         </base-input>
+        <!-- -------- -->
+        
+        <!-- ------- -->
       </div>
     </form>
     <ul class="navbar-nav align-items-center d-none d-md-flex">
@@ -65,16 +69,32 @@
   </base-nav>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       activeNotifications: false,
       showMenu: false,
-      searchQuery: "",
-      searchWord:''
+      search:'',
+      searchResult:[]
     };
   },
   methods: {
+    getsearch(event){
+      this.search = event.currentTarget.value
+      axios({
+        url: "http://localhost:8000/queryfundtocode/",
+        method: "get",
+        params: {
+          fundcode: this.search,
+        },
+      }).then((response) => {
+        console.log(response)
+      }),
+        (err) => {
+          console.log(err);
+        };
+    },
     toggleSidebar() {
       this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
     },
@@ -84,9 +104,6 @@ export default {
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
-    inputStr(value){
-      console.log(value)
-    }
   },
 };
 </script>
