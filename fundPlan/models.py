@@ -20,6 +20,7 @@ class fundData(models.Model):
 class fundList(models.Model):
     account = models.CharField(max_length=10, null=False, default="admin")
     fundcode = models.CharField(max_length=10, null=False)
+    fundname = models.CharField(max_length=30, null=False,default="admin")
     # 是否购买
     isbuy = models.IntegerField(null=FlatValuesListIterable,default=0)
     # 买入时间

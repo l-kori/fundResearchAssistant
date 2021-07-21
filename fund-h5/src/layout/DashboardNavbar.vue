@@ -80,7 +80,7 @@
         <div class="form-tab-s">
           <div class="search-field-s">
             <i data-feather="search" class="search-icon-s"></i>
-            <p class="search-placeholder-s">Reports or documents</p>
+            <p class="search-placeholder-s">搜索你要的基金</p>
             <form>
               <input
                 autocomplete="off"
@@ -100,28 +100,19 @@
         </div>
       </div>
       <div class="resoult-tab-s">
-        <div class="ul-title-s">
+        <!-- <div class="ul-title-s">
           <p>Recent Search</p>
-        </div>
-        <div class="ul-s">
+        </div> -->
+        <div class="ul-s" v-for="item in searchResult" :key="item.id">
+          <!-- 查询的结果 -->
           <div class="li-s li-1-s">
             <div class="li-icon-s">
               <i data-feather="clipboard" class="icon-s"></i>
             </div>
-            <div class="li-text-s">Traffic report 2020</div>
+            <div class="li-text-s">{{item.fundcode}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="li-text-s">{{item.fundname}}</div>
           </div>
-          <div class="li-s li-2-s">
-            <div class="li-icon-s">
-              <i data-feather="users" class="icon-s"></i>
-            </div>
-            <div class="li-text-s">Data audience February</div>
-          </div>
-          <div class="li-s li-3-s">
-            <div class="li-icon-s">
-              <i data-feather="calendar" class="icon-s"></i>
-            </div>
-            <div class="li-text-s">March exhibitions dates</div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -138,6 +129,7 @@ export default {
       searchResult: [],
       isShowSearch: true,
       searchcontent:''
+      
     };
   },
   methods: {
@@ -172,7 +164,9 @@ export default {
           fundcode: this.searchcontent,
         },
       }).then((response) => {
-        console.log(response);
+        // console.log(response);
+        this.searchResult = response.data.data.infos;
+        console.log(this.searchResult)
       }),
         (err) => {
           console.log(err);

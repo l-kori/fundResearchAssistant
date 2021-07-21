@@ -33,22 +33,22 @@
 }
 
 .container-s {
-  // width: var(400px);
   // height: calc(calc(var(700px) * 4) + 10px);
   // background: transparent;
   
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  // justify-content: flex-start;
-    position: fixed;
-    top: 20%;
-    left: calc(50% - 200px);
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 20%;
+  left: calc(50% - 200px);
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }
 
 .form-container-s {
+  
   width: 400px;
   height: 70px;
   background: #fff;
@@ -60,6 +60,7 @@
 .form-container-s .form-tab-s {
   width: 95%;
   height: calc(70px - 20px);
+  
 }
 
 .form-tab-s .search-field-s {
@@ -83,6 +84,7 @@
 }
 .form-tab-s .search-field-s .search-placeholder-s {
   position: absolute;
+  
   top: 12px;
   left: 42px;
   z-index: 1;
@@ -109,6 +111,7 @@
   padding: 5px 5px 5px 43px;
   caret-color: #79a6ff;
   line-height: 2em;
+  height: 250px;
 }
 .form-tab-s .search-btn-s {
   box-sizing: border-box;
@@ -119,17 +122,19 @@
   background: transparent;
   margin-top: 2px;
   padding-top: 12px;
+  
 }
 .form-tab-s .search-btn-s p {
   cursor: pointer;
   color: #222;
+  
 }
 
 .resoult-tab-s {
   justify-content: flex-start;
   flex-direction: column;
   width: 400px;
-  height: 0px;
+  height: 250px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 6px 30px -10px #d5dbed;
@@ -138,7 +143,7 @@
 }
 
 .resoult-tab-active-s {
-  height: calc(calc(70px / 2) * 4);
+  height: 250px;
   transition: height 399ms cubic-bezier(0.27, 0.7, 0, 0.99);
 }
 
@@ -159,7 +164,7 @@
 
 .ul-s {
   width: 100%;
-  height: auto;
+  height: 300px;
   background: transparent;
   position: relative;
   border-radius: 6px;
@@ -167,29 +172,34 @@
 .ul-s .li-s {
   box-sizing: border-box;
   padding: 0 5%;
+  padding-top: 10px;
   justify-content: flex-start;
   width: 100%;
-  height: calc(var(70px) / 2.5);
+  height: 40px;
   position: relative;
   overflow: hidden;
   background: rgba(20, 98, 255, 0);
   transition: background 399ms ease;
+  
 }
 .ul-s .li-s:hover {
   background: rgba(20, 98, 255, 0.1);
   transition: background 299ms ease;
+  padding-top: 10px;
 }
 .ul-s .li-s .li-icon-s {
   margin-right: 8px;
+  
 }
 .ul-s .li-s .li-icon-s .icon-s {
   transform: translatey(2px);
   color: #1462ff;
   width: var(--i2);
   height: var(--i2);
+  
 }
 .ul-s .li-s .li-text-s {
-  font-size: calc(var(--fs) / 1.1);
+  font-size: calc(var(--fs) / 1);
   color: #222;
   opacity: .8;
   cursor: pointer;
@@ -199,6 +209,7 @@
   animation: displayList 699ms cubic-bezier(0.6, 0.18, 0.5, 0.99) forwards;
   transform: translatey(40px);
   opacity: 0;
+  height: 250px;
 }
 
 .li-1-s {

@@ -36,7 +36,6 @@ def addFundList(request):
     # 1= 买了，0=没买
     isbuy = request.GET.get("isbuy",0)
 
-
     isexit = fundList.objects.filter(account=account,fundcode=fundcode)
     if len(isexit) != 0:
         logging.info("数据已存在，无需再添加")
@@ -50,12 +49,14 @@ def addFundList(request):
         logging.error(traceback.format_exc())
         return JsonResponse({"code": -2, "data": "失败"})
     fund_code = json_text['fundcode']
+    fund_name = json_text['name']
 
     try:
         funddata = fundList()
         funddata.fundcode = fund_code
         funddata.account = account
         funddata.isbuy = isbuy
+        funddata.fundname = fund_name
         funddata.save()
     except Exception as e:
         logging.error(e)
@@ -204,4 +205,3 @@ def queryFundToCode(request):
         logging.error(traceback.format_exc())
         return JsonResponse({"code": -1, "data": "失败"})
     return JsonResponse(res)
-
