@@ -24,6 +24,7 @@
         <template v-slot:default="row">
           <th scope="row">
             {{ row.item.name }}
+              <span v-show="row.item.isbuy==1" class="btn-sm btn-primary">持有</span>
           </th>
           <td>
             {{ row.item.fundcode }}
@@ -51,7 +52,6 @@
     </div>
   </div>
 </template>
-<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
 
 <script>
 import axios from "axios";
@@ -69,8 +69,7 @@ export default {
     that.getList();
     that.timer = setInterval(function () {
       that.getList()
-      console.log("1111111111")
-    }, 10000);
+    }, 60000);
   },
   methods: {
     getList() {
@@ -78,10 +77,11 @@ export default {
         url: "http://localhost:8000/userlivedata/",
         method: "get",
         params: {
-          account: "lxd1",
+          account: "kori",
         },
       }).then((response) => {
         this.tableData = response.data.data;
+        console.log(response)
       }),
         (err) => {
           console.log(err);

@@ -35,7 +35,7 @@ def addFundList(request):
     account = request.GET.get("account")
     # 1= 买了，0=没买
     isbuy = request.GET.get("isbuy",0)
-    buytime = request.GET.get("buytime")
+
 
     isexit = fundList.objects.filter(account=account,fundcode=fundcode)
     if len(isexit) != 0:
@@ -56,7 +56,6 @@ def addFundList(request):
         funddata.fundcode = fund_code
         funddata.account = account
         funddata.isbuy = isbuy
-        funddata.buytime = buytime
         funddata.save()
     except Exception as e:
         logging.error(e)
@@ -122,6 +121,7 @@ def userLiveData(request):
         text = requests.get("http://fundgz.1234567.com.cn/js/" + str(i.fundcode) + ".js?rt=1463558676006").text[8:-2]
         try:
             json_text = json.loads(text)
+            json_text['isbuy'] = str(i.isbuy)
             print(json_text)
             fund_list.append(json_text)
         except Exception as e:
