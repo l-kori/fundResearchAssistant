@@ -69,7 +69,7 @@ export default {
     that.getList();
     that.timer = setInterval(function () {
       that.getList()
-    }, 60000);
+    }, 10000);
   },
   methods: {
     getList() {

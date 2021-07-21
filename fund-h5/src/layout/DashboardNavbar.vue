@@ -6,7 +6,13 @@
     expand
   >
     <form
-      class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto"
+      class="
+        navbar-search navbar-search-dark
+        form-inline
+        mr-3
+        d-none d-md-flex
+        ml-lg-auto
+      "
     >
       <div class="form-group mb-0">
         <base-input
@@ -14,13 +20,10 @@
           class="input-group-alternative"
           alternative=""
           addon-right-icon="fas fa-search"
-          @input="search($event)"
-          @keyup="getsearch"
+          
+          @click="clicksearch"
         >
         </base-input>
-        <!-- -------- -->
-        
-        <!-- ------- -->
       </div>
     </form>
     <ul class="navbar-nav align-items-center d-none d-md-flex">
@@ -66,6 +69,63 @@
         </base-dropdown>
       </li>
     </ul>
+    <!-- 搜索框弹出 -->
+    <div
+      class="mask-s"
+      v-if="isShowSearch == false"
+      @click="isShowSearch = true"
+    />
+    <div class="container-s" v-if="isShowSearch == false">
+      <div class="form-container-s">
+        <div class="form-tab-s">
+          <div class="search-field-s">
+            <i data-feather="search" class="search-icon-s"></i>
+            <p class="search-placeholder-s">Reports or documents</p>
+            <form>
+              <input
+                autocomplete="off"
+                type="text"
+                pattern="\S+.*"
+                name="input"
+                id="input"
+                class="text-field-s"
+                v-model="searchcontent"
+                @keyup="getsearch"
+              />
+            </form>
+          </div>
+          <div class="search-btn-s">
+            <p>search</p>
+          </div>
+        </div>
+      </div>
+      <div class="resoult-tab-s">
+        <div class="ul-title-s">
+          <p>Recent Search</p>
+        </div>
+        <div class="ul-s">
+          <div class="li-s li-1-s">
+            <div class="li-icon-s">
+              <i data-feather="clipboard" class="icon-s"></i>
+            </div>
+            <div class="li-text-s">Traffic report 2020</div>
+          </div>
+          <div class="li-s li-2-s">
+            <div class="li-icon-s">
+              <i data-feather="users" class="icon-s"></i>
+            </div>
+            <div class="li-text-s">Data audience February</div>
+          </div>
+          <div class="li-s li-3-s">
+            <div class="li-icon-s">
+              <i data-feather="calendar" class="icon-s"></i>
+            </div>
+            <div class="li-text-s">March exhibitions dates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------- -->
   </base-nav>
 </template>
 <script>
@@ -75,21 +135,44 @@ export default {
     return {
       activeNotifications: false,
       showMenu: false,
-      search:'',
-      searchResult:[]
+      searchResult: [],
+      isShowSearch: true,
+      searchcontent:''
     };
   },
   methods: {
-    getsearch(event){
-      this.search = event.currentTarget.value
+    clicksearch() {
+      this.isShowSearch = !this.isShowSearch;
+      setTimeout(() => {
+        const searchInput = document.getElementById("input");
+        searchInput.addEventListener("focus", () => {
+          const resoultTab = document.getElementsByClassName("resoult-tab-s")[0];
+          resoultTab.className += " resoult-tab-active-s";
+          console.log(resoultTab,resoultTab.class);
+          setTimeout(()=>{
+            document.getElementsByClassName("ul-title-s")[0].style.opacity = 1;
+          }, 299);
+          // List fade in
+          setTimeout(()=>{
+            document.getElementsByClassName("li-s")[0].className +=" li-active";
+          }, 0);
+        });
+        searchInput.addEventListener("blur", () => {
+          // const resoultTab = document.getElementByClassName("resoult-tab-s")[0];
+        });
+        searchInput.focus();
+      }, 300);
+      console.log(this.isShowSearch);
+    },
+    getsearch() {
       axios({
         url: "http://localhost:8000/queryfundtocode/",
         method: "get",
         params: {
-          fundcode: this.search,
+          fundcode: this.searchcontent,
         },
       }).then((response) => {
-        console.log(response)
+        console.log(response);
       }),
         (err) => {
           console.log(err);
@@ -104,6 +187,9 @@ export default {
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
+    search(event){
+      console.log(event)
+    }
   },
 };
 </script>
