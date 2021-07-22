@@ -212,12 +212,12 @@ def crawlMinData(request):
     for i in res:
         text = requests.get("http://fundgz.1234567.com.cn/js/" + i.fundcode + ".js?rt=1463558676006").text[8:-2]
         json_text = json.loads(text)
-        datatime = time.strftime("%Y-%m-%d %H:%M", time.localtime())
-        res = mindata.objects.filter(fundcode=i.fundcode,datatime=datatime)
+        
+        res = mindata.objects.filter(fundcode=i.fundcode,datatime=json_text['gztime'])
         if len(res) == 0:
             min = mindata()
             min.fundcode = i.fundcode
-            min.datatime = time.strftime("%Y-%m-%d %H:%M", time.localtime())
+            min.datatime = json_text['gztime']
             min.zf = json_text['gszzl']
             min.save()
             logging.info(i.fundcode+"写入成功")
