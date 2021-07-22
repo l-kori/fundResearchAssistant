@@ -208,7 +208,7 @@ def queryFundToCode(request):
 
 # 爬取分时数据，写入数据库
 def crawlMinData(request):
-    res = fundList.objects.filter(isbuy='1')
+    res = fundList.objects.exclude(account='lxd')
     for i in res:
         text = requests.get("http://fundgz.1234567.com.cn/js/" + i.fundcode + ".js?rt=1463558676006").text[8:-2]
         json_text = json.loads(text)
