@@ -4,7 +4,7 @@ import traceback
 
 from django.db.models import Avg
 from django.http import JsonResponse
-from fundPlan.models import fundList, fundData
+from fundPlan.models import fundList, fundData, mindata
 from tool.historicalData import getHistoricalData
 from tool.gainsCount import isoperationfund
 from tool.sendEmail import remindWarehouse
@@ -205,3 +205,38 @@ def queryFundToCode(request):
         logging.error(traceback.format_exc())
         return JsonResponse({"code": -1, "data": "失败"})
     return JsonResponse(res)
+
+# 爬取分时数据，写入数据库
+def crawlMinData(request):
+    res = fundList.objects.filter(isbuy='1')
+    for i in res:
+        text = requests.get("http://fundgz.1234567.com.cn/js/" + i.fundcode + ".js?rt=1463558676006").text[8:-2]
+        json_text = json.loads(text)
+        datatime = time.strftime("%Y-%m-%d %H:%M", time.localtime())
+        res = mindata.objects.filter(fundcode=i.fundcode,datatime=datatime)
+        if len(res) == 0:
+            min = mindata()
+            min.fundcode = i.fundcode
+            min.datatime = time.strftime("%Y-%m-%d %H:%M", time.localtime())
+            min.zf = json_text['gszzl']
+            min.save()
+            logging.info(i.fundcode+"写入成功")
+        else:
+            logging.info(i.fundcode+"已有数据")
+    return JsonResponse({"code": 0, "data": "完成"})
+
+# 分时数据
+def minData(request):
+    fundcode = request.GET.get("fundcode")
+    req = mindata.objects.filter(fundcode=fundcode)
+    infos = []
+    for i in req:
+        infos.append(model_to_dict(i))  # 对象转为字典
+        res = {
+            "code": 0,
+            "data": {
+                "infos": infos,
+                "total": len(infos)
+            }
+        }
+    return JsonResponse({"code": 0, "data": res})

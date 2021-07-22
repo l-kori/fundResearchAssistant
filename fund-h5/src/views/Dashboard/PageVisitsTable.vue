@@ -52,6 +52,7 @@
     </div>
   </div>
 </template>
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
 
 <script>
 import axios from "axios";
@@ -69,7 +70,7 @@ export default {
     that.getList();
     that.timer = setInterval(function () {
       that.getList()
-    }, 10000);
+    }, 60000);
   },
   methods: {
     getList() {

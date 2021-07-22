@@ -46,3 +46,8 @@ class fundtipslog(models.Model):
     jjzf = models.FloatField(max_length=20, null=False, default=0)
     # 建议调仓类型   1=加仓  0=减仓
     warehousetype = models.IntegerField(null=False)
+
+class mindata(models.Model):
+    fundcode = models.CharField(max_length=10, null=False)
+    datatime = models.DateTimeField(max_length=18, null=False)
+    zf = models.FloatField(max_length=20, null=False, default=0)

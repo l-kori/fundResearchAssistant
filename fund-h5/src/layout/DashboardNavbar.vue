@@ -20,7 +20,6 @@
           class="input-group-alternative"
           alternative=""
           addon-right-icon="fas fa-search"
-          
           @click="clicksearch"
         >
         </base-input>
@@ -104,15 +103,19 @@
           <p>Recent Search</p>
         </div> -->
         <div class="ul-s" v-for="item in searchResult" :key="item.id">
-          <!-- 查询的结果 -->
-          <div class="li-s li-1-s">
+          <!-- 查询的结果 加自选按钮-->
+          <div class="li-s li-1-s" @click="plusFree(item.fundcode)">
             <div class="li-icon-s">
               <i data-feather="clipboard" class="icon-s"></i>
             </div>
-            <div class="li-text-s">{{item.fundcode}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div class="li-text-s">{{item.fundname}}</div>
+            <div class="li-text-s">
+              {{
+                item.fundcode
+              }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="li-text-s">{{ item.fundname }}</div>
+            
           </div>
-          
         </div>
       </div>
     </div>
@@ -128,26 +131,29 @@ export default {
       showMenu: false,
       searchResult: [],
       isShowSearch: true,
-      searchcontent:''
-      
+      searchcontent: "",
     };
   },
   methods: {
+    plusFree(fundcode){
+      console.log(fundcode)
+    },
     clicksearch() {
       this.isShowSearch = !this.isShowSearch;
       setTimeout(() => {
         const searchInput = document.getElementById("input");
         searchInput.addEventListener("focus", () => {
-          const resoultTab = document.getElementsByClassName("resoult-tab-s")[0];
+          const resoultTab =
+            document.getElementsByClassName("resoult-tab-s")[0];
           resoultTab.className += " resoult-tab-active-s";
-          console.log(resoultTab,resoultTab.class);
-          setTimeout(()=>{
-            document.getElementsByClassName("ul-title-s")[0].style.opacity = 1;
-          }, 299);
-          // List fade in
-          setTimeout(()=>{
-            document.getElementsByClassName("li-s")[0].className +=" li-active";
-          }, 0);
+          console.log(resoultTab, resoultTab.class);
+          // setTimeout(()=>{
+          //   document.getElementsByClassName("ul-title-s")[0].style.opacity = 1;
+          // }, 299);
+          // // List fade in
+          // setTimeout(()=>{
+          //   document.getElementsByClassName("li-s")[0].className +=" li-active";
+          // }, 0);
         });
         searchInput.addEventListener("blur", () => {
           // const resoultTab = document.getElementByClassName("resoult-tab-s")[0];
@@ -166,7 +172,7 @@ export default {
       }).then((response) => {
         // console.log(response);
         this.searchResult = response.data.data.infos;
-        console.log(this.searchResult)
+        console.log(this.searchResult);
       }),
         (err) => {
           console.log(err);
@@ -181,9 +187,9 @@ export default {
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
-    search(event){
-      console.log(event)
-    }
+    search(event) {
+      console.log(event);
+    },
   },
 };
 </script>

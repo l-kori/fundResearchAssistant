@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^fundtips/', views.fundTips),
     url(r'^fundprofit/', views.fundProfit),
     url(r'^queryfundtocode/', views.queryFundToCode),
+    url(r'^mindata/', views.minData),
+    url(r'^crawlmindata/', views.crawlMinData),
 ]
