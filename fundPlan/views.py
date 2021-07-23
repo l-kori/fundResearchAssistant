@@ -100,7 +100,7 @@ def synchronousData(request):
             fundcode = str(list_text[i].values())[14:-3]
             getHistoricalData(fundcode)
             logging.info(fundcode+"数据同步完成")
-            logging.info("剩余未同步的数据"+len(list_text)-i)
+            logging.info("剩余未同步的数据"+str(len(list_text)-i))
     except Exception as e:
         logging.error(e)
         logging.error(traceback.format_exc())
@@ -215,17 +215,18 @@ def crawlMinData(request):
 
         min = mindata()
         min.fundcode = i.fundcode
-        min.datatime = time.strftime("%Y-%m-%d %H:%M", time.localtime())
+        min.datatime = json_text['gztime']
         min.zf = json_text['gszzl']
         min.save()
         logging.info(i.fundcode+"写入成功")
+
     return JsonResponse({"code": 0, "data": "完成"})
 
 # 分时数据
 def minData(request):
     fundcode = request.GET.get("fundcode")
     req = mindata.objects.filter(fundcode=fundcode)
-    res ={}
+    res = {}
     infos = []
     for i in req:
         infos.append(model_to_dict(i))  # 对象转为字典
