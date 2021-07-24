@@ -95,13 +95,13 @@ def synchronousData(request):
     yesterday=today-oneday 
     date = str(yesterday)+' 00:00:00.000000'
     logging.info("开始同步"+date+"数据")
-    list_text = list(fundData.objects.exclude(jzrq=date,fundcode='002959'))
-    print(len(list_text))
-
+    list_text = fundData.objects.exclude(jzrq=date,fundcode='002959')
+    print(list_text)
     try:
         import threading
-        for i in range(0,len(list_text)):
-            fundcode = str(list_text[i].values())[14:-3]
+        for i in list_text:
+            # fundcode = str(list_text[i].values())[14:-3]
+            fundcode = i.fundcode
             t = threading.Thread(target=getHistoricalData,args=(fundcode,))
             t.start()
             # getHistoricalData(fundcode)
