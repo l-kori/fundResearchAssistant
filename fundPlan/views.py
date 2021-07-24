@@ -89,10 +89,12 @@ def removeFundList(request):
 
 # 同步所有基金历史数据
 def synchronousData(request):
+    
     today=datetime.date.today() 
     oneday=datetime.timedelta(days=1) 
     yesterday=today-oneday 
     date = str(yesterday)+' 00:00:00.000000'
+    logging.info("开始同步"+date+"数据")
     list_text = list(fundData.objects.exclude(jzrq=date,fundcode='002959'))
     print(len(list_text))
 
