@@ -96,9 +96,10 @@ def synchronousData(request):
         logging.error("基金列表没有数据")
         return JsonResponse({"code": -6, "data": "同步失败"})
     try:
+        import threading
         for i in range(0,len(list_text)):
             fundcode = str(list_text[i].values())[14:-3]
-            getHistoricalData(fundcode)
+            threading.Thread(target=getHistoricalData,args=(fundcode,))
             logging.info(fundcode+"数据同步完成")
             logging.info("剩余未同步的数据"+str(len(list_text)-i))
     except Exception as e:
