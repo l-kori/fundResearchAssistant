@@ -16,6 +16,7 @@ from django.forms.models import model_to_dict
 from django.core import serializers
 import time
 import re
+import threading
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
@@ -95,16 +96,15 @@ def synchronousData(request):
     yesterday=today-oneday 
     date = str(yesterday)+' 00:00:00.000000'
     logging.info("开始同步"+date+"数据")
-    list_text = fundData.objects.exclude(jzrq=date,fundcode='002959')
-    print(list_text)
+    list_text = fundList.objects.values('fundcode').distinct()
+    # print(list_text)
     try:
-        import threading
-        for i in list_text:
-            # fundcode = str(list_text[i].values())[14:-3]
-            fundcode = i.fundcode
-            t = threading.Thread(target=getHistoricalData,args=(fundcode,))
-            t.start()
-            # getHistoricalData(fundcode)
+        for i in range(len(list_text)) :
+            fundcode = str(list_text[i].values())[14:-3]
+            res = fundData.objects.filter(fundcode = fundcode,jzrq=date)
+            if len(res) == 0:
+                t = threading.Thread(target=getHistoricalData,args=(fundcode,))
+                t.start()
             logging.info("剩余未同步的数据"+str(len(list_text)-i))
             print("剩余未同步的数据"+str(len(list_text)-i))
     except Exception as e:
