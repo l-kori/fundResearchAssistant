@@ -97,11 +97,14 @@ def synchronousData(request):
         return JsonResponse({"code": -6, "data": "同步失败"})
     try:
         import threading
+        insertData = []
         for i in range(0,len(list_text)):
             fundcode = str(list_text[i].values())[14:-3]
-            threading.Thread(target=getHistoricalData,args=(fundcode,))
-            logging.info(fundcode+"数据同步完成")
+            t = threading.Thread(target=getHistoricalData,args=(fundcode,))
+            t.start()
+            # getHistoricalData(fundcode)
             logging.info("剩余未同步的数据"+str(len(list_text)-i))
+            print("剩余未同步的数据"+str(len(list_text)-i))
     except Exception as e:
         logging.error(e)
         logging.error(traceback.format_exc())
