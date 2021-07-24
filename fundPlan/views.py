@@ -90,14 +90,15 @@ def removeFundList(request):
 
 # 同步所有基金历史数据
 def synchronousData(request):
-    list_text = list(fundData.objects.values("fundcode").distinct())
+    sj = time.strftime("%Y-%m-%d %H:%M", time.localtime()) 
+    list_text = list(fundData.objects.exclude(jzrq=sj))
+    print(list_text)
     if len(list_text) == 0:
         logging.error(traceback.format_exc())
         logging.error("基金列表没有数据")
         return JsonResponse({"code": -6, "data": "同步失败"})
     try:
         import threading
-        insertData = []
         for i in range(0,len(list_text)):
             fundcode = str(list_text[i].values())[14:-3]
             t = threading.Thread(target=getHistoricalData,args=(fundcode,))
