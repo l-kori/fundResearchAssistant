@@ -15,7 +15,6 @@ import datetime
 from django.forms.models import model_to_dict
 from django.core import serializers
 import time
-
 import re
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
@@ -90,14 +89,15 @@ def removeFundList(request):
 
 # 同步所有基金历史数据
 def synchronousData(request):
-    list_text = list(fundList.objects.values("fundcode").distinct())
-    if len(list_text) == 0:
-        logging.error(traceback.format_exc())
-        logging.error("基金列表没有数据")
-        return JsonResponse({"code": -6, "data": "同步失败"})
+    today=datetime.date.today() 
+    oneday=datetime.timedelta(days=1) 
+    yesterday=today-oneday 
+    date = str(yesterday)+' 00:00:00.000000'
+    list_text = list(fundData.objects.exclude(jzrq=date,fundcode='002959'))
+    print(len(list_text))
+
     try:
         import threading
-        insertData = []
         for i in range(0,len(list_text)):
             fundcode = str(list_text[i].values())[14:-3]
             t = threading.Thread(target=getHistoricalData,args=(fundcode,))
