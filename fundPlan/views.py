@@ -105,6 +105,9 @@ def synchronousData(request):
             if len(res) == 0:
                 t = threading.Thread(target=getHistoricalData,args=(fundcode,))
                 t.start()
+            else:
+                logging.info(fundcode + "----" + date+"数据存在，无需同步")
+                re_text = "成功"
             logging.info("剩余未同步的数据"+str(len(list_text)-i))
             print("剩余未同步的数据"+str(len(list_text)-i))
     except Exception as e:
