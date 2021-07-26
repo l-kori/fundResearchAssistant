@@ -157,7 +157,7 @@ def fundTips(request):
             logging.error(e)
             logging.error(traceback.format_exc())
             return JsonResponse({"code": -2, "data": "失败"})
-        isoperation = isoperationfund(fund_list[i].account,fund_list[i].fundcode,json_text['gszzl'],0)
+        isoperation = isoperationfund(fund_list[i].account,fund_list[i].fundcode,float(json_text['gszzl']),0)
         if isoperation == 1:
             # 发送邮件
             res = remindWarehouse(fund_list[i].fundcode,fund_list[i].account,1)
