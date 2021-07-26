@@ -24,7 +24,7 @@ def isoperationfund(account,fundcode,jjzf,customzf):
     # 1、如果今天的收益达到历史平均收益的3倍    ==暴涨
     # 历史平均涨幅
     lspjzf = float(fundData.objects.filter(fundcode = fundcode).aggregate(Avg('jdzjrzf'))['jdzjrzf__avg'])
-    if float(jjzf) >= lspjzf*3:
+    if lspjzf >= lspjzf*3:
         logging.info(fundcode+"当日达到了历史平均收益的3倍")
         isoperation = 2
         return isoperation
