@@ -37,41 +37,37 @@ def getHistoricalData(code):
         if i % 9 == 0:
             code = str(txt[i+1]).replace("<td>", "").replace("</td>", "")
             date = str(txt[i]).replace("<td>", "").replace("</td>", "")
-            list1 = fundData.objects.all().filter(fundcode=code, jzrq=date)
+            # list1 = fundData.objects.all().filter(fundcode=code, jzrq=date)
 
 
             # print(pjzf)
             # 写入前查询数据是否存在
-            if len(list1) == 0:
-                try:
-                    funddata = fundData()
-                    funddata.jzrq = str(txt[i]).replace("<td>", "").replace("</td>", "")
-                    code = str(txt[i + 1]).replace("<td>", "").replace("</td>", "")
-                    funddata.fundcode = code
-                    funddata.name = str(txt[i+2]).replace("<td>", "").replace("</td>", "")
-                    funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
-                    if len(re.findall("green",txt[i+8])) >0:
-                        jrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
-                        jrzf = -jrzf
-                    else:
-                        jrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
-                    funddata.jdzjrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
-                    funddata.jrzf = jrzf
-                    funddata.save()
-                    logging.info(code + "----" + date+"同步成功")
-                    i += 9
-                except Exception as e:
-                    logging.info("同步失败，数据库写入失败")
-                    logging.error(e)
-                    logging.error(traceback.format_exc())
-                    re_text = {"code": -1, "data": "失败"}
-                    err = "失败"
-                    return re_text,err
-
-            else:
-                logging.info(code + "----" + date+"数据存在，无需同步")
-                re_text = "成功"
-                return re_text
+            # if len(list1) == 0:
+            try:
+                funddata = fundData()
+                funddata.jzrq = str(txt[i]).replace("<td>", "").replace("</td>", "")
+                code = str(txt[i + 1]).replace("<td>", "").replace("</td>", "")
+                funddata.fundcode = code
+                funddata.name = str(txt[i+2]).replace("<td>", "").replace("</td>", "")
+                funddata.sjjz = str(txt[i+3]).replace("<td>", "").replace("</td>", "")
+                if len(re.findall("green",txt[i+8])) >0:
+                    jrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
+                    jrzf = -jrzf
+                else:
+                    jrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
+                funddata.jdzjrzf = float(re.findall("[-+]?([0-9]*\.[0-9]+|[0-9]+)",str(txt[i+8]).replace("<td>", "").replace("</td>", ""))[0])
+                funddata.jrzf = jrzf
+                funddata.save()
+                logging.info(code + "----" + date+"同步成功")
+                i += 9
+            except Exception as e:
+                logging.info("同步失败，数据库写入失败")
+                logging.error(e)
+                logging.error(traceback.format_exc())
+                re_text = {"code": -1, "data": "失败"}
+                err = "失败"
+                return re_text,err
+                
     re_text = "成功"
     return re_text
 
