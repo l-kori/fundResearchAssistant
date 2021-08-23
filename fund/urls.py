@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^queryfundtocode/', views.queryFundToCode),
     url(r'^mindata/', views.minData),
     url(r'^crawlmindata/', views.crawlMinData),
+    url(r'^yumaoqiuview/', views.yumaoqiuview),
+    url(r'^yumaoqiugo/', views.yumaoqiugo),
 ]

@@ -8,6 +8,7 @@ from fundPlan.models import fundList, fundData, mindata
 from tool.historicalData import getHistoricalData
 from tool.gainsCount import isoperationfund
 from tool.sendEmail import remindWarehouse
+from tool.sp import pyxd
 import json
 import requests
 from django.db.models import Avg
@@ -26,7 +27,7 @@ def addFundListt(request):
         text = f.read()
     texts = re.findall("<a href=\"/fundinfo/(.*?).html",text)
     for k in texts:
-        req = requests.get("http://121.5.252.114:8000/addfundlist?account=lxd&fundcode="+str(k)+"&isbuy=1&buytime=2021-07-15")
+        req = requests.get("http://127.0.0.1:8000/addfundlist?account=lxd&fundcode="+str(k)+"&isbuy=1&buytime=2021-07-15")
         logging.info(req.text)
     return JsonResponse({"code": -2, "data": "失败"})
 
@@ -247,3 +248,17 @@ def minData(request):
             }
         }
     return JsonResponse({"code": 0, "data": res})
+
+
+def yumaoqiuview(request):
+    with open("ymqgo.txt","r",encoding='utf8') as f:
+        data = f.read()
+    return JsonResponse({"code": 0, "data": data})
+
+def yumaoqiugo(request):
+    try:
+        t = threading.Thread(target=pyxd)
+        t.start()
+        return JsonResponse({"code": 0, "data": "启动成功"})
+    except :
+        return JsonResponse({"code": 1, "data": "失败"})

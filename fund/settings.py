@@ -74,18 +74,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fund.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 DATABASES = {
     'default':
         {
             'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
             'NAME': 'fund',  # 数据库名称
-            'HOST': '121.5.252.114',
+            # 'HOST': '121.5.252.114',
+            'HOST': 'localhost',
             'PORT': 3306,  # 端口
             'USER': 'root',  # 数据库用户名
-            'PASSWORD': '123456',  # 数据库密码
+            # 'PASSWORD': '123456',  # 数据库密码
+            'PASSWORD': 'kori1998',  # 数据库密码
             'TEST': {
                 'CHARSET': 'utf8',
                 'COLLATION': 'utf8_general_ci'
