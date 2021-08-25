@@ -98,51 +98,70 @@ def login():
 
 
 def pyxd():
-    # 登录
-    res = login()
-    Authorization = 'Bearer '+res
-    print(Authorization)
-    wlog("登录成功")
-    import datetime
-    nowdate = datetime.datetime.now()
-    stime = (nowdate + datetime.timedelta(days=+9)).strftime("%Y-%m-%d")
-    print(stime)
-    while 1:
-        ss = time.strftime("%H:%M:%S", time.localtime())
-        if ss == '00:30:00':
-            wlog("结束了")
-            wlog("-------------------------------------------------------------------------")
-            break
-        # 找场地
-        url = "http://transfer.51yundong.me/v3/resource_transfer/new/3fb03d294a564d3e9cde7b8c5c0a90b4?date="+stime+""
-        payload={}
-        headers = {
-        'Authorization': 'Bearer ' + Authorization,
-        '1yd_source': 'android_user',
-        '1yd_version': '3.8.6_RELEASE',
-        'Host': 'transfer.51yundong.me',
-        'Connection': 'Keep-Alive',
-        'Accept-Encoding': 'gzip',
-        'User-Agent': 'okhttp/3.11.0'
-        }
+    try:
+        import os
+        path = "ymqgo.txt"  # 文件路径
+        if os.path.exists(path):  # 如果文件存在
+            # 删除文件，可使用以下两种方法。
+            os.remove(path)  
+            #os.unlink(path)
+        else:
+            print('no such file')  # 则返回文件不存在
+        # 登录
+        res = login()
+        Authorization = 'Bearer '+res
+        print(Authorization)
+        wlog("登录成功")
+        import datetime
+        nowdate = datetime.datetime.now()
+        stime = (nowdate + datetime.timedelta(days=+8)).strftime("%Y-%m-%d")
+        print(stime)
+        while 1:
+            ss = time.strftime("%H:%M:%S", time.localtime())
+            if ss == '00:30:00':
+                wlog("结束了")
+                import os
+                path = 'D:\code\fundResearchAssistant\ymqgo.txt'  # 文件路径
+                if os.path.exists(path):  # 如果文件存在
+                    # 删除文件，可使用以下两种方法。
+                    os.remove(path)  
+                    #os.unlink(path)
+                else:
+                    print('no such file')  # 则返回文件不存在
+                wlog("-------------------------------------------------------------------------")
+                break
+            # 找场地
+            url = "http://transfer.51yundong.me/v3/resource_transfer/new/3fb03d294a564d3e9cde7b8c5c0a90b4?date="+stime+""
+            payload={}
+            headers = {
+            'Authorization': 'Bearer ' + Authorization,
+            '1yd_source': 'android_user',
+            '1yd_version': '3.8.6_RELEASE',
+            'Host': 'transfer.51yundong.me',
+            'Connection': 'Keep-Alive',
+            'Accept-Encoding': 'gzip',
+            'User-Agent': 'okhttp/3.11.0'
+            }
 
-        response = requests.request("GET", url, headers=headers, data=payload)
-        s = json.loads(response.text)
-        ss = s['data']
-        ss.reverse()
-        fieldId = ss[5]['field_id']
-        fildidnub =ss[5]['field_name']
+            response = requests.request("GET", url, headers=headers, data=payload)
+            s = json.loads(response.text)
+            ss = s['data']
+            ss.reverse()
+            fieldId = ss[5]['field_id']
+            fildidnub =ss[5]['field_name']
 
-        for i in ss:
-            fieldId= i['field_id']
-            fildidnub= i['field_name']
-            # 下单
-            t = threading.Thread(target=qdxd,args=(fieldId,fildidnub,stime,Authorization))
-            t.start()
-            t1 = threading.Thread(target=qdxd1,args=(fieldId,fildidnub,stime,Authorization))
-            t1.start()
-        time.sleep(5)
-    
+            for i in ss:
+                fieldId= i['field_id']
+                fildidnub= i['field_name']
+                # 下单
+                t = threading.Thread(target=qdxd,args=(fieldId,fildidnub,stime,Authorization))
+                t.start()
+                t1 = threading.Thread(target=qdxd1,args=(fieldId,fildidnub,stime,Authorization))
+                t1.start()
+            time.sleep(5)
+    except :
+        print("异常")
+        
 def qdxd(fieldId,fildidnub,stime,Authorization):
     url = "http://order.51yundong.me/v3/orders"
 
@@ -173,9 +192,9 @@ def qdxd(fieldId,fildidnub,stime,Authorization):
     'Accept-Encoding': 'gzip',
     'User-Agent': 'okhttp/3.11.0'
     }
-
-    response = requests.request("POST", url, headers=headers, data=payload)
     try:
+        response = requests.request("POST", url, headers=headers, data=payload)
+    
         res_json = json.loads(response.text)
         if res_json['success'] != 'F':
             remindWarehouse('八点场抢到了')
@@ -184,7 +203,7 @@ def qdxd(fieldId,fildidnub,stime,Authorization):
         else:
             wlog(str(res_json))
     except :
-        wlog(str(res_json))
+        wlog("异常")
 def qdxd1(fieldId,fildidnub,stime,Authorization):
     url = "http://order.51yundong.me/v3/orders"
 
@@ -216,8 +235,9 @@ def qdxd1(fieldId,fildidnub,stime,Authorization):
     'User-Agent': 'okhttp/3.11.0'
     }
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+    
     try:
+        response = requests.request("POST", url, headers=headers, data=payload)
         res_json = json.loads(response.text)
         if res_json['success'] != 'F':
             remindWarehouse('九点场抢到了')
@@ -226,4 +246,5 @@ def qdxd1(fieldId,fildidnub,stime,Authorization):
         else:
             wlog(str(res_json))
     except :
-        wlog(str(res_json))
+        wlog("异常")
+    

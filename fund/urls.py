@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^crawlmindata/', views.crawlMinData),
     url(r'^yumaoqiuview/', views.yumaoqiuview),
     url(r'^yumaoqiugo/', views.yumaoqiugo),
+    url(r'^yumaoqiulogs/', views.yumaoqiulogs),
 ]

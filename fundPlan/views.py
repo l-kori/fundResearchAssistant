@@ -250,10 +250,15 @@ def minData(request):
     return JsonResponse({"code": 0, "data": res})
 
 
-def yumaoqiuview(request):
+def yumaoqiulogs(request):
+    text = []
     with open("ymqgo.txt","r",encoding='utf8') as f:
-        data = f.read()
-    return JsonResponse({"code": 0, "data": data})
+        for line in f.readlines():
+            line = line.split('\n')
+            print(line)
+            text.append(line)
+    text.reverse()
+    return JsonResponse({"code": 0, "data": text})
 
 def yumaoqiugo(request):
     try:
@@ -262,3 +267,35 @@ def yumaoqiugo(request):
         return JsonResponse({"code": 0, "data": "启动成功"})
     except :
         return JsonResponse({"code": 1, "data": "失败"})
+
+
+def yumaoqiuview(request):
+    from tool.sp import login
+    res = login()
+    Authorization = 'Bearer '+res
+    url = "http://order.51yundong.me/v3/orders/user?pageNo=1&pageSize=10&orderStatus=3"
+
+    payload={}
+    headers = {
+    'Authorization': Authorization,
+    '1yd_source': 'android_user',
+    '1yd_version': '3.8.6_RELEASE',
+    'Host': 'order.51yundong.me',
+    'Connection': 'Keep-Alive',
+    'Accept-Encoding': 'gzip',
+    'User-Agent': 'okhttp/3.11.0'
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload).text
+    res_json = json.loads(response)
+    data = []
+    for i in range(0,len(res_json['data']['dataList'])):
+        if res_json['data']['dataList'][i]['orderField'][0]['paymentStatusMsg'] == '已支付':
+            data.append([res_json['data']['dataList'][i]['fieldName'],
+                res_json['data']['dataList'][i]['resourceDate'],
+                res_json['data']['dataList'][i]['orderField'][0]['beginTime'],
+                res_json['data']['dataList'][i]['orderField'][0]['endTime'],
+                res_json['data']['dataList'][i]['cancelOrderTime']
+            ])
+    data.reverse()
+    return JsonResponse({"code": 1, "data": data})
