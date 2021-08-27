@@ -74,23 +74,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fund.wsgi.application'
 
 
-DATABASES = {
-    'default':
-        {
-            'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
-            'NAME': 'fund',  # 数据库名称
-            # 'HOST': '121.5.252.114',
-            'HOST': 'localhost',
-            'PORT': 3306,  # 端口
-            'USER': 'root',  # 数据库用户名
-            # 'PASSWORD': '123456',  # 数据库密码
-            'PASSWORD': 'kori1998',  # 数据库密码
-            'TEST': {
-                'CHARSET': 'utf8',
-                'COLLATION': 'utf8_general_ci'
-            }
-}
-}
+# DATABASES = {
+#     'default':
+#         {
+#             'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+#             'NAME': 'fund',  # 数据库名称
+#             # 'HOST': '121.5.252.114',
+#             'HOST': 'localhost',
+#             'PORT': 3306,  # 端口
+#             'USER': 'root',  # 数据库用户名
+#             # 'PASSWORD': '123456',  # 数据库密码
+#             'PASSWORD': 'kori1998',  # 数据库密码
+#             'TEST': {
+#                 'CHARSET': 'utf8',
+#                 'COLLATION': 'utf8_general_ci'
+#             }
+# }
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

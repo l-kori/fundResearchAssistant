@@ -8,7 +8,6 @@ from fundPlan.models import fundList, fundData, mindata
 from tool.historicalData import getHistoricalData
 from tool.gainsCount import isoperationfund
 from tool.sendEmail import remindWarehouse
-from tool.sp import pyxd
 import json
 import requests
 from django.db.models import Avg
@@ -18,6 +17,7 @@ from django.core import serializers
 import time
 import re
 import threading
+from tool.sp import login,qdxd,qdxd1
 
 LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename='my.log', level=logging.DEBUG, format=LOG_FORMAT)
@@ -262,12 +262,66 @@ def yumaoqiulogs(request):
 
 def yumaoqiugo(request):
     try:
-        t = threading.Thread(target=pyxd)
-        t.start()
-        return JsonResponse({"code": 0, "data": "启动成功"})
+        import os
+        path = "ymqgo.txt"  # 文件路径
+        if os.path.exists(path):  # 如果文件存在
+            # 删除文件，可使用以下两种方法。
+            os.remove(path)  
+            #os.unlink(path)
+        else:
+            print('no such file')  # 则返回文件不存在
+        # 登录
+        
+        res = login()
+        Authorization = 'Bearer '+res
+        import datetime
+        
+        count = 0
+        while 1:
+            count +=1
+            if count == 5:
+                import os
+                path = 'ymqgo.txt'  # 文件路径
+                if os.path.exists(path):  # 如果文件存在
+                    # 删除文件，可使用以下两种方法。
+                    os.remove(path)  
+                    #os.unlink(path)
+                else:
+                    print('no such file')  # 则返回文件不存在
+                break
+            ss = time.strftime("%H:%M:%S", time.localtime())
+            nowdate = datetime.datetime.now()
+            stime = (nowdate + datetime.timedelta(days=+8)).strftime("%Y-%m-%d")
+            url = "http://transfer.51yundong.me/v3/resource_transfer/new/3fb03d294a564d3e9cde7b8c5c0a90b4?date="+stime+""
+            payload={}
+            headers = {
+            'Authorization': 'Bearer ' + Authorization,
+            '1yd_source': 'android_user',
+            '1yd_version': '3.8.6_RELEASE',
+            'Host': 'transfer.51yundong.me',
+            'Connection': 'Keep-Alive',
+            'Accept-Encoding': 'gzip',
+            'User-Agent': 'okhttp/3.11.0'
+            }
+
+            response = requests.request("GET", url, headers=headers, data=payload)
+            s = json.loads(response.text)
+            ss = s['data']
+            ss.reverse()
+            fieldId = ss[5]['field_id']
+            fildidnub =ss[5]['field_name']
+
+            for i in ss:
+                fieldId= i['field_id']
+                fildidnub= i['field_name']
+                # 下单
+                t = threading.Thread(target=qdxd,args=(fieldId,fildidnub,stime,Authorization))
+                t.start()
+                t1 = threading.Thread(target=qdxd1,args=(fieldId,fildidnub,stime,Authorization))
+                t1.start()
+        return JsonResponse({"code": 1, "data": "完成"})
     except :
         return JsonResponse({"code": 1, "data": "失败"})
-
 
 def yumaoqiuview(request):
     from tool.sp import login
